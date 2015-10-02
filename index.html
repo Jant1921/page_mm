@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+<?php
+include('login.php');
+
+if(isset($_SESSION['signed_nombre'])){ //hay que cambiar el nombre de la variable
+header("location: pag_inicio.html");
+}
+?>﻿
+<!DOCTYPE html>
 <html>
   <head>
     <title>Index</title>
@@ -48,15 +55,15 @@
   </head>
   <body>
     <div id="base" class="">
-
+    <form method="post" action="">
       <!-- txt_nomUsuario_home (Text Field) -->
       <div id="u0" class="ax_text_field" data-label="txt_nomUsuario_home">
-        <input id="u0_input" type="text" value=""/>
+        <input id="u0_input" name="campo_nombre" type="text" value=""/>
       </div>
 
       <!-- txt_contrasena_home (Text Field) -->
       <div id="u1" class="ax_text_field" data-label="txt_contrasena_home">
-        <input id="u1_input" type="password" value=""/>
+        <input id="u1_input" name="campo_pass" type="password" value=""/>
       </div>
 
       <!-- NombreUser (Shape) -->
@@ -78,63 +85,18 @@
       </div>
 
       <!-- btn_iniciarSecion_home (Dynamic Panel) -->
-      <div id="u6" class="ax_dynamic_panel" data-label="btn_iniciarSecion_home">
-        <div id="u6_state0" class="panel_state" data-label="State1">
-          <div id="u6_state0_content" class="panel_state_content">
-
+      <div id="u6" data-label="btn_iniciarSecion_home">
             <!-- Unnamed (Shape) -->
-            <div id="u7" class="ax_shape">
-              <img id="u7_img" class="img " src="images/index/u7.png"/>
-              <!-- Unnamed () -->
-              <div id="u8" class="text">
-                <p><span>Iniciar Sesión</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="u6_state1" class="panel_state" data-label="State2">
-          <div id="u6_state1_content" class="panel_state_content">
-
-            <!-- Unnamed (Shape) -->
-            <div id="u9" class="ax_shape">
-              <img id="u9_img" class="img " src="images/index/u9.png"/>
-              <!-- Unnamed () -->
-              <div id="u10" class="text">
-                <p><span>Iniciar Sesión</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
+            <input type="submit" id="u7" name="boton_login" value="Iniciar Sesión">
+            
       </div>
+    </form>
 
       <!-- btn_registrarse_home (Dynamic Panel) -->
-      <div id="u11" class="ax_dynamic_panel" data-label="btn_registrarse_home">
-        <div id="u11_state0" class="panel_state" data-label="State1">
-          <div id="u11_state0_content" class="panel_state_content">
-
-            <!-- Unnamed (Shape) -->
-            <div id="u12" class="ax_shape">
-              <img id="u12_img" class="img " src="images/index/u7.png"/>
-              <!-- Unnamed () -->
-              <div id="u13" class="text">
-                <p><span>Registrarse</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="u11_state1" class="panel_state" data-label="State2">
-          <div id="u11_state1_content" class="panel_state_content">
-
-            <!-- Unnamed (Shape) -->
-            <div id="u14" class="ax_shape">
-              <img id="u14_img" class="img " src="images/index/u9.png"/>
-              <!-- Unnamed () -->
-              <div id="u15" class="text">
-                <p><span>Registrarse</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="u11" data-label="btn_registrarse_home">
+        <form method="post" action="pag_terminos_y_condiciones.html">
+          <input type="submit" id="u12" name="boton_registrarse" value="Registrarse">
+        <form/>
       </div>
 
       <!-- Unnamed (BarraSuperior) -->

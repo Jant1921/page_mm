@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+<?php
+include('sesion.php');
+?>﻿
+<!DOCTYPE html>
 <html>
   <head>
     <title>Pag Inicio</title>
@@ -349,7 +352,11 @@
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u57" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u57_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+          <div id="u57_input">
+              <?php 
+              print '<p><span>'.$person_nombre.'</span></p>';
+              ?>
+          </div>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -363,9 +370,8 @@
       <div id="u59" class="ax_paragraph boton_lateral" data-label="lbl_logout">
         <img id="u59_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u60" class="text">
-          <p><span>Cerrar Sesión</span></p>
-        </div>
+        <a href="close.php">Cerrar Sesión</a>
+        <!--<input id="u60" type="submit" value="Cerrar Sesión"-->
       </div>
 
       <!-- lbl_config (Shape) -->
