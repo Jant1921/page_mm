@@ -1,7 +1,7 @@
 <?php
 include('sesion.php');
 ?>﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <title>Pag Inicio</title>
@@ -65,7 +65,7 @@ include('sesion.php');
 
       <!-- BarraSuperior (Shape) -->
       <div id="u3" class="ax_shape" data-label="BarraSuperior">
-        <img id="u3_img" class="img " src="images/index/barrasuperior_u17.png"/>
+        <img id="u3_img" class="img " src="images/home/barrasuperior_u17.png"/>
         <!-- Unnamed () -->
         <div id="u4" class="text">
           <p><span></span></p>
@@ -74,7 +74,7 @@ include('sesion.php');
 
       <!-- Logo superior (Image) -->
       <div id="u5" class="ax_image" data-label="Logo superior">
-        <img id="u5_img" class="img " src="images/index/logo_superior_u19.jpg"/>
+        <img id="u5_img" class="img " src="images/home/logo_superior_u19.jpg"/>
         <!-- Unnamed () -->
         <div id="u6" class="text">
           <p><span></span></p>
@@ -114,12 +114,17 @@ include('sesion.php');
       </div>
 
       <!-- btn_PagMatchVisitarPersona1 (Shape) -->
-      <div id="u14" class="ax_shape" data-label="btn_PagMatchVisitarPersona1">
-        <img id="u14_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+      <div id="u14" class="ax_shape" data-label="btn_PagMatchVisitarPersona1" >
+           
+        
+        <!--><img id="u14_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
         <!-- Unnamed () -->
-        <div id="u15" class="text">
+        <!--><div id="u15" class="text">
           <p><span>Visitar</span></p>
-        </div>
+        </div><!-->
+        <form method="get" action="close.php" >
+		
+            <input id="u14_img"  class="img " type="submit" value="Visitar" /> 
       </div>
 
       <!-- Unnamed (Menus) -->
@@ -128,7 +133,7 @@ include('sesion.php');
 
       <!-- BarraSuperior (Shape) -->
       <div id="u18" class="ax_shape" data-label="BarraSuperior">
-        <img id="u18_img" class="img " src="images/index/barrasuperior_u17.png"/>
+        <img id="u18_img" class="img " src="images/home/barrasuperior_u17.png"/>
         <!-- Unnamed () -->
         <div id="u19" class="text">
           <p><span></span></p>
@@ -137,7 +142,7 @@ include('sesion.php');
 
       <!-- Logo superior (Image) -->
       <div id="u20" class="ax_image" data-label="Logo superior">
-        <img id="u20_img" class="img " src="images/index/logo_superior_u19.jpg"/>
+        <img id="u20_img" class="img " src="images/home/logo_superior_u19.jpg"/>
         <!-- Unnamed () -->
         <div id="u21" class="text">
           <p><span></span></p>
@@ -352,11 +357,7 @@ include('sesion.php');
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u57" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-          <div id="u57_input">
-              <?php 
-              print '<p><span>'.$person_nombre.'</span></p>';
-              ?>
-          </div>
+        <input id="u57_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -370,8 +371,9 @@ include('sesion.php');
       <div id="u59" class="ax_paragraph boton_lateral" data-label="lbl_logout">
         <img id="u59_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <a href="close.php">Cerrar Sesión</a>
-        <!--<input id="u60" type="submit" value="Cerrar Sesión"-->
+        <div id="u60" class="text">
+          <p><span>Cerrar Sesión</span></p>
+        </div>
       </div>
 
       <!-- lbl_config (Shape) -->
@@ -651,20 +653,26 @@ include('sesion.php');
 
       <!-- btn_siguente (Shape) -->
       <div id="u108" class="ax_shape" data-label="btn_siguente">
-        <img id="u108_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+        <!--><img id="u108_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u109" class="text">
           <p><span>Siguiente</span></p>
-        </div>
+        </div><!-->
+        <form method="get" action="close.php" >
+		
+            <input id="u108_img"  class="img " type="submit" value="Siguiente" />
       </div>
 
       <!-- btn_anterior (Shape) -->
       <div id="u110" class="ax_shape" data-label="btn_anterior">
-        <img id="u110_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+        <!--<img id="u110_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u111" class="text">
           <p><span>Anterior</span></p>
-        </div>
+        </div>-->
+        <form method="get" action="close.php" >
+		
+            <input id="u110_img"  class="img " type="submit" value="Anterior" />
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -701,11 +709,14 @@ include('sesion.php');
 
       <!-- btn_PagMatchVisitarPersona4 (Shape) -->
       <div id="u119" class="ax_shape" data-label="btn_PagMatchVisitarPersona4">
-        <img id="u119_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+       <!--> <img id="u119_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u120" class="text">
           <p><span>Visitar</span></p>
-        </div>
+        </div>-->
+        <form method="get" action="close.php" >
+		
+            <input id="u119_img"  class="img " type="submit" value="Visitar" />
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -719,7 +730,7 @@ include('sesion.php');
 
       <!-- img_persona2 (Image) -->
       <div id="u123" class="ax_image" data-label="img_persona2">
-        <img id="u123_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <--><img id="u123_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
         <!-- Unnamed () -->
         <div id="u124" class="text">
           <p><span></span></p>
@@ -742,11 +753,14 @@ include('sesion.php');
 
       <!-- btn_PagMatchVisitarPersona2 (Shape) -->
       <div id="u128" class="ax_shape" data-label="btn_PagMatchVisitarPersona2">
-        <img id="u128_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+        <!--><img id="u128_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u129" class="text">
           <p><span>Visitar</span></p>
-        </div>
+        </div>-->
+        <form method="get" action="close.php" >
+		
+            <input id="u128_img"  class="img " type="submit" value="Visitar" />
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -783,11 +797,14 @@ include('sesion.php');
 
       <!-- btn_PagMatchVisitarPersona5 (Shape) -->
       <div id="u137" class="ax_shape" data-label="btn_PagMatchVisitarPersona5">
-        <img id="u137_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+        <!--><img id="u137_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u138" class="text">
           <p><span>Visitar</span></p>
-        </div>
+        </div>-->
+        <form method="get" action="close.php" >
+		
+            <input id="u137_img"  class="img " type="submit" value="Visitar" />
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -824,11 +841,14 @@ include('sesion.php');
 
       <!-- btn_PagMatchVisitarPersona3 (Shape) -->
       <div id="u146" class="ax_shape" data-label="btn_PagMatchVisitarPersona3">
-        <img id="u146_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+        <!--><img id="u146_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u147" class="text">
           <p><span>Visitar</span></p>
-        </div>
+        </div>-->
+        <form method="get" action="close.php" >
+		
+            <input id="u146_img"  class="img " type="submit" value="Visitar" />
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -865,11 +885,14 @@ include('sesion.php');
 
       <!-- btn_PagMatchVisitarPersona6 (Shape) -->
       <div id="u155" class="ax_shape" data-label="btn_PagMatchVisitarPersona6">
-        <img id="u155_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () -->
+        <!--><img id="u155_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
+        <!-- Unnamed () 
         <div id="u156" class="text">
           <p><span>Visitar</span></p>
-        </div>
+        </div>-->
+        <form method="get" action="close.php" >
+		
+            <input id="u155_img"  class="img " type="submit" value="Visitar" />
       </div>
     </div>
   </body>
