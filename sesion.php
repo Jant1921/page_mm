@@ -1,6 +1,7 @@
 <?php
 session_start();
 $id_pers=$_SESSION['signed_id'];
+echo $id_pers;
 $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
     if (!$conn) {
         $error = "No se pudo conectar con la base de datos";
