@@ -31,17 +31,15 @@ if (isset($_POST['boton_login'])) {
             $error="Por favor verifique su Usuario o Contraseña";
             echo $error;
         }else{
-            $stid = oci_parse($conn,'select persona_nombre from persona where persona_user '
+            $stid = oci_parse($conn,'select persona_id from persona where persona_user '
                 . '= :nom_user');
             oci_bind_by_name($stid,':nom_user',$user_name);
             oci_execute($stid);
             while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-                $person_nombre = $row['PERSONA_NOMBRE'];
+                $person_id = $row['PERSONA_ID'];
             }
-            
-            $_SESSION['signed_nombre']=$person_nombre; // Initializing Session
-            header("location: pag_inicio.html"); // Redirecting To Other Page
-            
+            $_SESSION['signed_id']=$person_id;
+            header("location: pag_inicio.html"); // Redirecting To Other Page            
         }
         
 
