@@ -1,5 +1,7 @@
 ﻿<?php
 include('DatosPerfil.php');
+
+
 ?>﻿
 ﻿<!DOCTYPE html>
 <html>
@@ -760,41 +762,22 @@ include('DatosPerfil.php');
 
       <!-- txt_genero (Text Field) -->
       <div id="u129" class="ax_text_field txt_perfil" data-label="txt_genero">
-       <div id="u129_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_genero.'</span></p>';
-        ?>
-       </div>
-            
+        <input id="u129_input" type="text" value="Hombre" readonly/>
       </div>
 
       <!-- txt_ubicacion (Text Field) -->
       <div id="u130" class="ax_text_field txt_perfil" data-label="txt_ubicacion">
-           <div id="u130_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_ciudad.'</span></p>';
-        ?>
-       </div>
-            
+        <input id="u130_input" type="text" value="Liberia, Guanacaste" readonly/>
       </div>
 
       <!-- txt_religion (Text Field) -->
       <div id="u131" class="ax_text_field txt_perfil" data-label="txt_religion">
-        <div id="u131_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_religion.'</span></p>';
-        ?>
-       </div>
+        <input id="u131_input" type="text" value="Católico" readonly/>
       </div>
 
       <!-- txt_educacion (Text Field) -->
       <div id="u132" class="ax_text_field txt_perfil" data-label="txt_educacion">
-           <div id="u132_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_educacion.'</span></p>';
-        ?>
-       </div>
-            
+        <input id="u132_input" type="text" value="Bachillerato" readonly/>
       </div>
 
       <!-- txt_profesion (Text Field) -->
@@ -804,31 +787,17 @@ include('DatosPerfil.php');
 
       <!-- txt_estadoCivil (Text Field) -->
       <div id="u134" class="ax_text_field txt_perfil" data-label="txt_estadoCivil">
-          <div id="u128_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_ecivil.'</span></p>';
-        ?>
-       </div>
-            
+        <input id="u134_input" type="text" value="Unión Libre" readonly/>
       </div>
 
       <!-- txt_signoZodiaco (Text Field) -->
       <div id="u135" class="ax_text_field txt_perfil" data-label="txt_signoZodiaco">
-        <div id="u135_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_szodiaco.'</span></p>';
-        ?>
-       </div>
+        <input id="u135_input" type="text" value="Libra" readonly/>
       </div>
 
       <!-- txt_email (Text Field) -->
       <div id="u136" class="ax_text_field txt_perfil" data-label="txt_email">
-           <div id="u128_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_correo.'</span></p>';
-        ?>
-       </div>
-            
+        <input id="u136_input" type="text" value="PeterJM@correoWeb.com" readonly/>
       </div>
 
       <!-- txt_generoInteres (Text Field) -->
@@ -877,185 +846,6 @@ include('DatosPerfil.php');
           <option value="Video Juegos">Video Juegos</option>
           <option value="Ver Deportes">Ver Deportes</option>
         </select>
-      </div>
- <!-- lbl_Fumador (Shape) -->
-      <div id="u143" class="ax_paragraph lbl_perfil" data-label="lbl_Fumador">
-        <img id="u143_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u144" class="text">
-          <p><span>¿Fumador?</span></p>
-        </div>
-      </div>
-
-      <!-- lbl_fuma (Shape) -->
-      <div id="u145" class="ax_paragraph lbl_perfil" data-label="lbl_fuma">
-        <img id="u145_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u146" class="text">
-          <p><span>No</span></p>
-        </div>
-      </div>
-
-      <!-- lbl_Fumador (Shape) -->
-      <div id="u147" class="ax_paragraph lbl_perfil" data-label="lbl_Fumador">
-        <img id="u147_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u148" class="text">
-          <p><span>¿</span><span>Bebedor</span><span>?</span></p>
-        </div>
-      </div>
-
-      <!-- lbl_bebedor (Shape) -->
-      <div id="u149" class="ax_paragraph lbl_perfil" data-label="lbl_bebedor">
-        <img id="u149_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u150" class="text">
-          <p><span>Social</span></p>
-        </div>
-      </div>
-
-      <!-- lbl_Chijos (Shape) -->
-      <div id="u151" class="ax_paragraph lbl_perfil" data-label="lbl_Chijos">
-        <img id="u151_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u152" class="text">
-          <p><span>Cantidad de Hijos</span></p>
-        </div>
-      </div>
-
-      <!-- txt_Chijos (Shape) -->
-      <div id="u153" class="ax_paragraph lbl_perfil" data-label="txt_Chijos">
-        <img id="u153_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u154" class="text">
-          <p><span>0</span></p>
-        </div>
-      </div>
-
-      <!-- lbl_gmascotas (Shape) -->
-      <div id="u155" class="ax_paragraph lbl_perfil" data-label="lbl_gmascotas">
-        <img id="u155_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u156" class="text">
-            <p><span>¿Le gustan las mascotas?</span></p>
-        </div>
-      </div>
-
-      <!-- txt_gmascotas (Shape) -->
-      <div id="u157" class="ax_paragraph lbl_perfil" data-label="txt_gmascotas">
-        <div id="u157_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_gmascotas.'</span></p>';
-        ?>
-       </div>
-      </div>
-
-      <!-- lbl_FrecEjer (Shape) -->
-      <div id="u159" class="ax_paragraph lbl_perfil" data-label="lbl_FrecEjer">
-        <img id="u159_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u160" class="text">
-          <p><span>Frecuencia de Ejercicio:</span></p>
-        </div>
-      </div>
-
-      <!-- txt_FrecEjer (Shape) -->
-      <div id="u161" class="ax_paragraph lbl_perfil" data-label="txt_FrecEjer">
-        <div id="u128_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_frecejer.'</span></p>';
-        ?>
-       </div>
-      </div>
-
-      <!-- lbl_pmascotas (Shape) -->
-      <div id="u163" class="ax_paragraph lbl_perfil" data-label="lbl_pmascotas">
-        <img id="u163_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u164" class="text">
-          <p><span>Posee mascotas</span></p>
-        </div>
-      </div>
-
-      <!-- txt_pmascotas (Shape) -->
-      <div id="u165" class="ax_paragraph lbl_perfil" data-label="txt_pmascotas">
-       <div id="u165_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_pmascotas.'</span></p>';
-        ?>
-       </div>
-      </div>
-
-      <!-- lbl_mmascotas (Shape) -->
-      <div id="u167" class="ax_paragraph lbl_perfil" data-label="lbl_mmascotas">
-        <img id="u167_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u168" class="text">
-          <p><span>¿Est</span><span>á</span><span> dispuesto a tener</span></p><p><span>m</span><span>á</span><span>s mascotas?</span></p>
-        </div>
-      </div>
-
-      <!-- lbl_altura (Shape) -->
-      <div id="u169" class="ax_paragraph lbl_perfil" data-label="lbl_altura">
-        <img id="u169_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u170" class="text">
-          <p><span>¿</span><span>Altura</span><span>?</span></p>
-        </div>
-      </div>
-
-      <!-- txt_altura (Shape) -->
-      <div id="u171" class="ax_paragraph lbl_perfil" data-label="txt_altura">
-       <div id="u171_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_altura.'</span></p>';
-        ?>
-       </div>
-      </div>
-
-      <!-- lbl_peso (Shape) -->
-      <div id="u173" class="ax_paragraph lbl_perfil" data-label="lbl_peso">
-        <img id="u173_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u174" class="text">
-          <p><span>¿</span><span>Peso</span><span>?</span></p>
-        </div>
-      </div>
-
-      <!-- txt_peso (Shape) -->
-      <div id="u175" class="ax_paragraph lbl_perfil" data-label="txt_peso">
-        <div id="u165_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_peso.'</span></p>';
-        ?>
-       </div>
-      </div>
-
-      <!-- lbl_contextura (Shape) -->
-      <div id="u177" class="ax_paragraph lbl_perfil" data-label="lbl_contextura">
-        <img id="u177_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u178" class="text">
-          <p><span>¿</span><span>Contextura</span><span>?</span></p>
-        </div>
-      </div>
-
-      <!-- txt_contextura (Shape) -->
-      <div id="u179" class="ax_paragraph lbl_perfil" data-label="txt_contextura">
-        <div id="u165_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_contextura.'</span></p>';
-        ?>
-       </div>
-      </div>
-
-      <!-- txt_mmascotas (Shape) -->
-      <div id="u181" class="ax_paragraph lbl_perfil" data-label="txt_mmascotas">
-        <div id="u165_input" class="text"> 
-        <?php
-        print '<p><span>'.$person_mmascotas.'</span></p>';
-        ?>
-       </div>
       </div>
     </div>
   </body>
