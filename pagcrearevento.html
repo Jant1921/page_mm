@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include('sesion.php');
+include('create_event.php');
+?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>PagCrearEvento</title>
@@ -195,13 +199,14 @@
         <img id="u30_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u31" class="text">
-          <p><span>Lugar</span><span>:</span></p>
+          <p><span>País</span><span>:</span></p>
         </div>
       </div>
 
+	<form method="post" action="">
       <!-- drp_lugar_PagCrearEvento (Droplist) -->
       <div id="u32" class="ax_droplist" data-label="drp_lugar_PagCrearEvento">
-        <select id="u32_input">
+        <select id="u32_input" name="pais_evento">
           <option value="Costa Rica">Costa Rica</option>
           <option value="España">España</option>
           <option value="Estados Unidos">Estados Unidos</option>
@@ -210,7 +215,7 @@
 
       <!-- C Costa Rica (Droplist) -->
       <div id="u33" class="ax_droplist" data-label="C Costa Rica">
-        <select id="u33_input">
+        <select id="u33_input" name="ciudad_evento">
           <option value="Cartago">Cartago</option>
           <option value="San Jose">San Jose</option>
           <option value="Alajuela">Alajuela</option>
@@ -218,28 +223,20 @@
         </select>
       </div>
 
-      <!-- C España (Droplist) -->
-      <div id="u34" class="ax_droplist" data-label="C España">
-        <select id="u34_input">
-          <option value="Madrid">Madrid</option>
-          <option value="Barcelona">Barcelona</option>
-          <option value="Valencia">Valencia</option>
-        </select>
-      </div>
 
       <!-- txt_hora_PagCrearEvento (Text Field) -->
       <div id="u35" class="ax_text_field" data-label="txt_hora_PagCrearEvento">
-        <input id="u35_input" type="time" value=""/>
+        <input id="u35_input" name="hora_evento" type="time" value=""/>
       </div>
 
       <!-- txt_fecha_PagCrearEvento (Text Field) -->
       <div id="u36" class="ax_text_field" data-label="txt_fecha_PagCrearEvento">
-        <input id="u36_input" type="date" value=""/>
+        <input id="u36_input" name="fecha_evento" type="date" value=""/>
       </div>
 
       <!-- txt_nombreEvento_PagCrearEvento (Text Field) -->
       <div id="u37" class="ax_text_field" data-label="txt_nombreEvento_PagCrearEvento">
-        <input id="u37_input" type="text" value=""/>
+        <input id="u37_input" name="nombre_evento" type="text" value=""/>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -253,11 +250,7 @@
 
       <!-- btn_crearEvento_PagCrearEvento (Shape) -->
       <div id="u40" class="ax_shape" data-label="btn_crearEvento_PagCrearEvento">
-        <img id="u40_img" class="img " src="images/pagcrearevento/btn_crearevento_pagcrearevento_u40.png"/>
-        <!-- Unnamed () -->
-        <div id="u41" class="text">
-          <p><span>Crear Evento</span></p>
-        </div>
+        <input type="submit" id="u41" name="btn_crear" value="Crear Evento">
       </div>
 
       <!-- btn_verMisEventos_PagCrearEvento (Shape) -->
@@ -282,7 +275,7 @@
 
       <!-- txb_descripcion_PagCrearEvento (Text Area) -->
       <div id="u45" class="ax_text_area" data-label="txb_descripcion_PagCrearEvento">
-        <textarea id="u45_input"></textarea>
+        <textarea id="u45_input" name="descripcion_evento"></textarea>
       </div>
 
       <!-- lbllugarevento (Shape) -->
@@ -820,13 +813,15 @@
 
       <!-- txt_asuntoCorreo_PagCrearEvento (Text Field) -->
       <div id="u140" class="ax_text_field" data-label="txt_asuntoCorreo_PagCrearEvento">
-        <input id="u140_input" type="text" value=""/>
+        <input id="u140_input" name="asunto_correo" type="text" value=""/>
       </div>
 
       <!-- txb_cuerpoCorreo_PagCrearEvento (Text Area) -->
       <div id="u141" class="ax_text_area" data-label="txb_cuerpoCorreo_PagCrearEvento">
-        <textarea id="u141_input"></textarea>
+        <textarea id="u141_input" name="cuerpo_correo"></textarea>
       </div>
+      
+      </form>
 
       <!-- lbl_cuerpocorreo (Shape) -->
       <div id="u142" class="ax_paragraph" data-label="lbl_cuerpocorreo">
