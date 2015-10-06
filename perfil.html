@@ -889,11 +889,11 @@ include('DatosPerfil.php');
 
       <!-- lbl_fuma (Shape) -->
       <div id="u145" class="ax_paragraph lbl_perfil" data-label="lbl_fuma">
-        <img id="u145_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u146" class="text">
-          <p><span>No</span></p>
-        </div>
+        <div id="u145_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_fumador.'</span></p>';
+        ?>
+       </div>
       </div>
 
       <!-- lbl_Fumador (Shape) -->
@@ -907,11 +907,11 @@ include('DatosPerfil.php');
 
       <!-- lbl_bebedor (Shape) -->
       <div id="u149" class="ax_paragraph lbl_perfil" data-label="lbl_bebedor">
-        <img id="u149_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u150" class="text">
-          <p><span>Social</span></p>
-        </div>
+        <div id="u149_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_bebedor.'</span></p>';
+        ?>
+       </div>
       </div>
 
       <!-- lbl_Chijos (Shape) -->
@@ -1042,7 +1042,7 @@ include('DatosPerfil.php');
 
       <!-- txt_contextura (Shape) -->
       <div id="u179" class="ax_paragraph lbl_perfil" data-label="txt_contextura">
-        <div id="u165_input" class="text"> 
+        <div id="u179_input" class="text"> 
         <?php
         print '<p><span>'.$person_contextura.'</span></p>';
         ?>
@@ -1051,7 +1051,7 @@ include('DatosPerfil.php');
 
       <!-- txt_mmascotas (Shape) -->
       <div id="u181" class="ax_paragraph lbl_perfil" data-label="txt_mmascotas">
-        <div id="u165_input" class="text"> 
+        <div id="u181_input" class="text"> 
         <?php
         print '<p><span>'.$person_mmascotas.'</span></p>';
         ?>
