@@ -39,6 +39,29 @@ if (isset($_POST['boton_login'])) {
                 $person_id = $row['PERSONA_ID'];
             }
             $_SESSION['signed_id']=$person_id;
+            
+            //se carga el nombre completo de la persona
+            $stid = oci_parse($conn, 'begin :resultado := get_person_nombre(:id_persona);end;');
+            oci_bind_by_name($stid,':resultado',$person_nombre,30);
+            oci_bind_by_name($stid,':id_persona',$person_id);
+            oci_execute($stid);
+            
+            $stid = oci_parse($conn, 'begin :resultado := select_prim_apellido(:id_persona);end;');
+            oci_bind_by_name($stid,':resultado',$person_pApellido,30);
+            oci_bind_by_name($stid,':id_persona',$person_id);
+            oci_execute($stid);
+            
+            $person_nombre.=" ".$person_pApellido;
+            
+            $stid = oci_parse($conn, 'begin :resultado := select_seg_apellido(:id_persona);end;');
+            oci_bind_by_name($stid,':resultado',$person_sApellido,30);
+            oci_bind_by_name($stid,':id_persona',$person_id);
+            oci_execute($stid);
+            
+            $person_nombre.=" ".$person_sApellido;
+            
+            $_SESSION['signed_nombre']=$person_nombre;
+            
             header("location: pag_inicio.html"); // Redirecting To Other Page            
         }
         
