@@ -799,12 +799,16 @@ include('DatosPerfil.php');
 
       <!-- txt_profesion (Text Field) -->
       <div id="u133" class="ax_text_field txt_perfil" data-label="txt_profesion">
-        <input id="u133_input" type="text" value="Estudiante" readonly/>
+        <div id="u134_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_ocupacion.'</span></p>';
+        ?>
+       </div>
       </div>
 
       <!-- txt_estadoCivil (Text Field) -->
       <div id="u134" class="ax_text_field txt_perfil" data-label="txt_estadoCivil">
-          <div id="u128_input" class="text"> 
+          <div id="u134_input" class="text"> 
         <?php
         print '<p><span>'.$person_ecivil.'</span></p>';
         ?>

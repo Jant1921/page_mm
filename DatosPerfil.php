@@ -33,7 +33,7 @@ $stid = oci_parse($conn, 'begin :resultado := get_Religion(:person_id);end;');
 oci_bind_by_name($stid,':resultado',$id_religion,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_Religion(:religion_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_religion_cat(:religion_id);end;');
 oci_bind_by_name($stid,':resultado',$person_religion,30);
 oci_bind_by_name($stid,':religion_id',$id_religion);
 oci_execute($stid);
@@ -43,7 +43,7 @@ $stid = oci_parse($conn, 'begin :resultado := get_Est_Civil_persona(:person_id);
 oci_bind_by_name($stid,':resultado',$id_ecivil,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_Est_Civil_persona(:ecivil_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_ecivil_cat(:ecivil_id);end;');
 oci_bind_by_name($stid,':resultado',$person_ecivil,30);
 oci_bind_by_name($stid,':ecivil_id',$id_ecivil);
 oci_execute($stid);
@@ -54,7 +54,7 @@ $stid = oci_parse($conn, 'begin :resultado := get_Nivel_Educacion(:person_id);en
 oci_bind_by_name($stid,':resultado',$id_educacion,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_Nivel_Educacion(:educacion_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_educacion_cat(:educacion_id);end;');
 oci_bind_by_name($stid,':resultado',$person_educacion,30);
 oci_bind_by_name($stid,':educacion_id',$id_educacion);
 oci_execute($stid);
@@ -64,7 +64,7 @@ $stid = oci_parse($conn, 'begin :resultado := get_Genero_persona(:person_id);end
 oci_bind_by_name($stid,':resultado',$id_genero,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_Genero_persona(:genero_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_genero_cat(:genero_id);end;');
 oci_bind_by_name($stid,':resultado',$person_genero,30);
 oci_bind_by_name($stid,':genero_id',$id_genero);
 oci_execute($stid);
@@ -92,7 +92,7 @@ $stid = oci_parse($conn, 'begin :resultado := get_person_contextura(:person_id);
 oci_bind_by_name($stid,':resultado',$id_contextura,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_person_contextura(:contextura_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_contextura(:contextura_id);end;');
 oci_bind_by_name($stid,':resultado',$person_contextura,40);
 oci_bind_by_name($stid,':contextura_id',$id_contextura);
 oci_execute($stid);
@@ -126,11 +126,12 @@ $stid = oci_parse($conn, 'begin :resultado := get_Frec_Ejer_persona(:person_id);
 oci_bind_by_name($stid,':resultado',$id_frecejer,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_Frec_Ejer_persona(:fejer_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_frecejer_cat(:fejer_id);end;');
 oci_bind_by_name($stid,':resultado',$person_frecejer,30);
 oci_bind_by_name($stid,':fejer_id',$id_frecejer);
 oci_execute($stid);
-// obtener la funcion
+
+// obtener la ciudad
 $stid = oci_parse($conn, 'begin :resultado := selectCiudad(:idPersona);end;');
 oci_bind_by_name($stid,':resultado',$person_ciudad,30);
 oci_bind_by_name($stid,':idPersona',$id_pers);
@@ -145,12 +146,21 @@ $stid = oci_parse($conn, 'begin :resultado := get_bebedor_persona(:person_id);en
 oci_bind_by_name($stid,':resultado',$id_bebedor,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_bebedor_persona(:bebedor_id);end;');
+$stid = oci_parse($conn, 'begin :resultado := get_bebedor_cat(:bebedor_id);end;');
 oci_bind_by_name($stid,':resultado',$person_bebedor,30);
 oci_bind_by_name($stid,':bebedor_id',$id_bebedor);
 oci_execute($stid);
 
-get_bebedor_cat
+
+$stid = oci_parse($conn, 'begin :resultado := get_Profesion(:person_id);end;');
+oci_bind_by_name($stid,':resultado',$id_profesion,10);
+oci_bind_by_name($stid,':person_id',$id_pers);
+oci_execute($stid);
+$stid = oci_parse($conn, 'begin :resultado := get_profesion_cat(:ocupacion_id);end;');
+oci_bind_by_name($stid,':resultado',$person_ocupacion,30);
+oci_bind_by_name($stid,':ocupacion_id',$id_profesion);
+oci_execute($stid);
+
 // Initializing Session
 
     }
