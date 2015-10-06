@@ -11,7 +11,7 @@ oci_bind_by_name($stid,':resultado',$person_nombre,30);
 oci_bind_by_name($stid,':id_persona',$id_pers);
 oci_execute($stid);
 $_SESSION['signed_nombre']=$person_nombre; // Initializing Session
-$stid = oci_parse($conn, 'begin :resultado := get_persona_edad(:per_id;end;');
+$stid = oci_parse($conn, 'begin :resultado := get_persona_edad(:per_id);end;');
 oci_bind_by_name($stid,':resultado',$person_edad,10);
 oci_bind_by_name($stid,':per_id',$id_pers);
 oci_execute($stid);
