@@ -1,3 +1,10 @@
+﻿<?php
+include('DatosPerfil.php');
+
+if(isset($_SESSION['signed_id'])){ //hay que cambiar el nombre de la variable
+header("location: perfil.html");
+}
+?>﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -279,7 +286,12 @@
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u41" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u41_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+        <div id="u41_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';
+        ?>
+        </div>
+            
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -638,7 +650,12 @@
 
       <!-- Unnamed (Text Field) -->
       <div id="u106" class="ax_text_field lbl_perfil">
-        <input id="u106_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+       <div id="u106_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';
+        ?>
+       </div>
+            
       </div>
 
       <!-- lbl_educacion (Shape) -->
@@ -738,7 +755,11 @@
 
       <!-- txt_edad (Text Field) -->
       <div id="u128" class="ax_text_field txt_perfil" data-label="txt_edad">
-        <input id="u128_input" type="text" value="21" readonly/>
+        <div id="u128_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_edad.'</span></p>';
+        ?>
+        </div>
       </div>
 
       <!-- txt_genero (Text Field) -->
