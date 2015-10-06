@@ -827,7 +827,7 @@ include('DatosPerfil.php');
 
       <!-- txt_email (Text Field) -->
       <div id="u136" class="ax_text_field txt_perfil" data-label="txt_email">
-           <div id="u128_input" class="text"> 
+           <div id="u136_input" class="text"> 
         <?php
         print '<p><span>'.$person_correo.'</span></p>';
         ?>
@@ -837,17 +837,31 @@ include('DatosPerfil.php');
 
       <!-- txt_generoInteres (Text Field) -->
       <div id="u137" class="ax_text_field txt_perfil" data-label="txt_generoInteres">
-        <input id="u137_input" type="text" value="Mujer" readonly/>
+         <div id="u137_input" class="text"> 
+        <?php
+        print '<p><span>'.$id_gpareja.'</span></p>';
+        ?>
+       </div>
       </div>
 
       <!-- txt_edadMin (Text Field) -->
       <div id="u138" class="ax_text_field txt_perfil" data-label="txt_edadMin">
-        <input id="u138_input" type="text" value="18" readonly/>
+           <div id="u138_input" class="text"> 
+        <?php
+        print '<p><span>'.$edad_min.'</span></p>';
+        ?>
+       </div>
+            
       </div>
 
       <!-- txt_edadMax (Text Field) -->
       <div id="u139" class="ax_text_field txt_perfil" data-label="txt_edadMax">
-        <input id="u139_input" type="text" value="24" readonly/>
+           <div id="u139_input" class="text"> 
+        <?php
+        print '<p><span>'.$edad_max.'</span></p>';
+        ?>
+       </div>
+            
       </div>
 
       <!-- tb_idiomasperf (List Box) -->

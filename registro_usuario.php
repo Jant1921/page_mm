@@ -49,7 +49,7 @@ if (isset($_POST['boton_crear'])) {
         oci_bind_by_name($get_ciudad,':nom_city',$_POST['in_ciudad']);
         oci_execute($get_ciudad);
         oci_bind_by_name($stid,':residencia',$ciudad_id);
-        oci_execute($stid);
+        oci_execute($stid); 
         
         $scriptI='begin :result := get_id_persona_user(nombre => :nombre); end;';
         $stid = oci_parse($conn,$scriptI);
@@ -57,7 +57,7 @@ if (isset($_POST['boton_crear'])) {
         oci_bind_by_name($stid,':nombre',$_POST['in_usuario']);
         oci_execute($stid);
         $_SESSION['signed_id']=$Persona_id;
-        
+               
         header("location: pagpersonabuscada.html");
     
     }

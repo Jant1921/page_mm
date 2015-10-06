@@ -151,7 +151,7 @@ oci_bind_by_name($stid,':resultado',$person_bebedor,30);
 oci_bind_by_name($stid,':bebedor_id',$id_bebedor);
 oci_execute($stid);
 
-
+//obtener la profesion
 $stid = oci_parse($conn, 'begin :resultado := get_Profesion(:person_id);end;');
 oci_bind_by_name($stid,':resultado',$id_profesion,10);
 oci_bind_by_name($stid,':person_id',$id_pers);
@@ -161,6 +161,26 @@ oci_bind_by_name($stid,':resultado',$person_ocupacion,30);
 oci_bind_by_name($stid,':ocupacion_id',$id_profesion);
 oci_execute($stid);
 
+$stid = oci_parse($conn, 'begin :resultado := get_edadmin_buscada(:person_id);end;');
+oci_bind_by_name($stid,':resultado',$edad_min,10);
+oci_bind_by_name($stid,':person_id',$id_pers);
+oci_execute($stid);
+
+$stid = oci_parse($conn, 'begin :resultado := get_edadmax_buscada(:person_id);end;');
+oci_bind_by_name($stid,':resultado',$edad_max,10);
+oci_bind_by_name($stid,':person_id',$id_pers);
+oci_execute($stid);
+
+
+//obtener el genero de la pareja q se busca
+$stid = oci_parse($conn, 'begin :resultado := get_tipo_pareja(:person_id);end;');
+oci_bind_by_name($stid,':resultado',$id_gpareja,10);
+oci_bind_by_name($stid,':person_id',$id_pers);
+oci_execute($stid);
+$stid = oci_parse($conn, 'begin :resultado := get_genero_cat(:genero_id);end;');
+oci_bind_by_name($stid,':resultado',$pareja_genero,30);
+oci_bind_by_name($stid,':genero_id',$id_gpareja);
+oci_execute($stid);
 // Initializing Session
 
     }
