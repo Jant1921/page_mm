@@ -81,7 +81,7 @@ oci_bind_by_name($stid,':per_id',$id_pers);
 oci_execute($stid);
 
 $stid = oci_parse($conn, 'begin :resultado := get_Frec_Ejer_persona(:person_id);end;');
-oci_bind_by_name($stid,':resultado',$person_frecejer,10);
+oci_bind_by_name($stid,':resultado',$person_frecejer,30);
 oci_bind_by_name($stid,':per_id',$id_pers);
 oci_execute($stid);
 // Initializing Session
