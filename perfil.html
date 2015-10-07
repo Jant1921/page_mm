@@ -880,11 +880,9 @@ include('DatosPerfil.php');
       <!-- tb_deportesperf (List Box) -->
       <div id="u141" class="ax_list_box txt_perfil" data-label="tb_deportesperf">
         <select id="u141_input" size="2">
-          <option value="Atletismo">Atletismo</option>
-          <option value="Natación">Natación</option>
-          <option value="Fútbol">Fútbol</option>
-          <option value="Tenis">Tenis</option>
-          <option value="Tenis de Mesa">Tenis de Mesa</option>
+          <?php
+          	include('deportes_persona.php');
+          	?>
         </select>
       </div>
 

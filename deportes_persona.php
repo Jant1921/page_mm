@@ -8,13 +8,14 @@ if (!$conn) {
         oci_bind_by_name($stid,':id_persona',$id_pers);
         oci_execute($stid);
         while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-        $st = oci_parse($conn, 'begin :resultado := selectNombreDeporte(:per_id);end;');
-        oci_bind_by_name($st,':per_id',$id_pers);
-        oci_execute($st);
-        
-    while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-               echo "<option value=".$row['RANGOSALARIO_ID'].">".$row['RANGOSALARIO_RANGO']."</option>";
-            }
+        	$st = oci_parse($conn, 'select deporte_nombre from deporte where deporte_id =:dep_id');
+        	oci_bind_by_name($st,':dep_id',$row['DXP_DEPORTE']);
+        	oci_execute($st);
+        	$row = oci_fetch_array($st, OCI_ASSOC);
+        	$depor_nom=$row['DEPORTE_NOMBRE'];
+        	echo "<option value=".$depor_nom.">".$depor_nom."</option>";
+        }
+  
 	oci_close($conn);
 }
 ?>
