@@ -1,3 +1,6 @@
+﻿<?php
+include('DatosOtroPerfil.php');
+?>﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -723,8 +726,13 @@
 
       <!-- Unnamed (Text Field) -->
       <div id="u123" class="ax_text_field lbl_perfil">
-        <input id="u123_input" type="text" value="Alejandra Mora Zapatero" readonly/>
-      </div>
+       <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';
+        ?>
+       </div>
+          
+       </div>
 
       <!-- lbl_educacion (Shape) -->
       <div id="u124" class="ax_paragraph lbl_perfil" data-label="lbl_educacion">
@@ -823,62 +831,122 @@
 
       <!-- txt_edad (Text Field) -->
       <div id="u145" class="ax_text_field txt_perfil" data-label="txt_edad">
-        <input id="u145_input" type="text" value="19" readonly/>
+       <div id="u145_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_edad.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_genero (Text Field) -->
       <div id="u146" class="ax_text_field txt_perfil" data-label="txt_genero">
-        <input id="u146_input" type="text" value="Mujer" readonly/>
+        <div id="u146_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_genero.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_ubicacion (Text Field) -->
       <div id="u147" class="ax_text_field txt_perfil" data-label="txt_ubicacion">
-        <input id="u147_input" type="text" value="Ámsterdam,Holanda" readonly/>
+        <div id="u147_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_ciudad.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_religion (Text Field) -->
       <div id="u148" class="ax_text_field txt_perfil" data-label="txt_religion">
-        <input id="u148_input" type="text" value="Ateo(a)" readonly/>
+        <div id="u148_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_religion.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_educacion (Text Field) -->
       <div id="u149" class="ax_text_field txt_perfil" data-label="txt_educacion">
-        <input id="u149_input" type="text" value="Licenciado(a)" readonly/>
+        <div id="u149_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_educacion.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_profesion (Text Field) -->
       <div id="u150" class="ax_text_field txt_perfil" data-label="txt_profesion">
-        <input id="u150_input" type="text" value="Abogado(a)" readonly/>
+        <div id="u150_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_profesion.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_estadoCivil (Text Field) -->
       <div id="u151" class="ax_text_field txt_perfil" data-label="txt_estadoCivil">
-        <input id="u151_input" type="text" value="Soltero(a)" readonly/>
+        <div id="u151_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_ecivil.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_signoZodiaco (Text Field) -->
       <div id="u152" class="ax_text_field txt_perfil" data-label="txt_signoZodiaco">
-        <input id="u152_input" type="text" value="Leo" readonly/>
+        <div id="u152_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_szodiaco.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_email (Text Field) -->
       <div id="u153" class="ax_text_field txt_perfil" data-label="txt_email">
-        <input id="u153_input" type="text" value="AleMZ@correoWeb.com" readonly/>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_correo.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_generoInteres (Text Field) -->
       <div id="u154" class="ax_text_field txt_perfil" data-label="txt_generoInteres">
-        <input id="u154_input" type="text" value="Hombre" readonly/>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$pareja_genero.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_edadMin (Text Field) -->
       <div id="u155" class="ax_text_field txt_perfil" data-label="txt_edadMin">
-        <input id="u155_input" type="text" value="18" readonly/>
+       <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$edad_min.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_edadMax (Text Field) -->
       <div id="u156" class="ax_text_field txt_perfil" data-label="txt_edadMax">
-        <input id="u156_input" type="text" value="21" readonly/>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$edad_max.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- btn_EnviarWink (Dynamic Panel) -->
@@ -1000,11 +1068,12 @@
 
       <!-- lbl_fuma (Shape) -->
       <div id="u172" class="ax_paragraph lbl_perfil" data-label="lbl_fuma">
-        <img id="u172_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u173" class="text">
-          <p><span>No</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_fumador.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_Fumador (Shape) -->
@@ -1018,11 +1087,12 @@
 
       <!-- lbl_bebedor (Shape) -->
       <div id="u176" class="ax_paragraph lbl_perfil" data-label="lbl_bebedor">
-        <img id="u176_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u177" class="text">
-          <p><span>Social</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_bebedor.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_Chijos (Shape) -->
@@ -1036,11 +1106,12 @@
 
       <!-- txt_Chijos (Shape) -->
       <div id="u180" class="ax_paragraph lbl_perfil" data-label="txt_Chijos">
-        <img id="u180_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u181" class="text">
-          <p><span>0</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_chijos.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_gmascotas (Shape) -->
@@ -1054,11 +1125,12 @@
 
       <!-- txt_gmascotas (Shape) -->
       <div id="u184" class="ax_paragraph lbl_perfil" data-label="txt_gmascotas">
-        <img id="u184_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u185" class="text">
-          <p><span>Si</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_gmascotas.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_FrecEjer (Shape) -->
@@ -1072,11 +1144,12 @@
 
       <!-- txt_FrecEjer (Shape) -->
       <div id="u188" class="ax_paragraph lbl_perfil" data-label="txt_FrecEjer">
-        <img id="u188_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u189" class="text">
-          <p><span>Semanal</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_frecejer.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_pmascotas (Shape) -->
@@ -1090,11 +1163,12 @@
 
       <!-- txt_pmascotas (Shape) -->
       <div id="u192" class="ax_paragraph lbl_perfil" data-label="txt_pmascotas">
-        <img id="u192_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u193" class="text">
-          <p><span>No</span></p>
-        </div>
+        <div id="u192_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_pmascotas.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_mmascotas (Shape) -->
@@ -1117,11 +1191,12 @@
 
       <!-- txt_altura (Shape) -->
       <div id="u198" class="ax_paragraph lbl_perfil" data-label="txt_altura">
-        <img id="u198_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u199" class="text">
-          <p><span>170</span></p>
-        </div>
+        <div id="u198_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_peso (Shape) -->
@@ -1135,11 +1210,12 @@
 
       <!-- txt_peso (Shape) -->
       <div id="u202" class="ax_paragraph lbl_perfil" data-label="txt_peso">
-        <img id="u202_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u203" class="text">
-          <p><span>90</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_peso.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- lbl_contextura (Shape) -->
@@ -1153,20 +1229,22 @@
 
       <!-- txt_contextura (Shape) -->
       <div id="u206" class="ax_paragraph lbl_perfil" data-label="txt_contextura">
-        <img id="u206_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u207" class="text">
-          <p><span>Delgado</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_contextura.'</span></p>';
+        ?>
+       </div>
+          
       </div>
 
       <!-- txt_mmascotas (Shape) -->
       <div id="u208" class="ax_paragraph lbl_perfil" data-label="txt_mmascotas">
-        <img id="u208_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u209" class="text">
-          <p><span>No</span></p>
-        </div>
+        <div id="u123_input" class="text"> 
+        <?php
+        print '<p><span>'.$person_mmascotas.'</span></p>';
+        ?>
+       </div>
+          
       </div>
     </div>
   </body>
