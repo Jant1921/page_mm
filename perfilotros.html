@@ -367,7 +367,11 @@ include('DatosOtroPerfil.php');
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u58" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u58_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+        <div id="u58_input" class="text">
+         	<?php
+        	print '<p><span>'.$person_nombre.'</span></p>';
+        	?>
+        </div>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -728,7 +732,7 @@ include('DatosOtroPerfil.php');
       <div id="u123" class="ax_text_field lbl_perfil">
        <div id="u123_input" class="text"> 
         <?php
-        print '<p><span>'.$person_nombre.'</span></p>';
+        print '<p><span>'.$visit_nombre.'</span></p>';
         ?>
        </div>
           
