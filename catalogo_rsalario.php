@@ -6,7 +6,7 @@ if (!$conn) {
 	$stid = oci_parse($conn,'select rangosalario_id,rangosalario_rango from rangosalario');
     oci_execute($stid);
     while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-               echo "<option value=".$row['rangosalario_ID'].">".$row['rangosalario_rango']."</option>";
+               echo "<option value=".$row['RANGOSALARIO_ID'].">".$row['RANGOSALARIO_RANGO']."</option>";
             }
 	oci_close($conn);
 }
