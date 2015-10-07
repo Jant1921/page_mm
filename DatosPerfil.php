@@ -132,8 +132,12 @@ oci_execute($stid);
 
 // obtener la ciudad
 $stid = oci_parse($conn, 'begin :resultado := selectCiudad(:idPersona);end;');
-oci_bind_by_name($stid,':resultado',$person_ciudad,30);
+oci_bind_by_name($stid,':resultado',$person_city,30);
 oci_bind_by_name($stid,':idPersona',$id_pers);
+oci_execute($stid);
+$stid = oci_parse($conn, 'begin :resultado := selectNombreCiudad(:idciudad);end;');
+oci_bind_by_name($stid,':resultado',$person_ciudad,30);
+oci_bind_by_name($stid,':idciudad',$person_city);
 oci_execute($stid);
 // saber si fuma
 $stid = oci_parse($conn, 'begin :resultado := get_fumador(:person_id);end;');
