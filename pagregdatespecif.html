@@ -107,12 +107,9 @@
 
       <!-- drp_rango_salario (Droplist) -->
       <div id="u13" class="ax_droplist" data-label="drp_rango_salario">
-        <select id="u13_input">
-          <option value="0-100mil">0-100mil</option>
-          <option value="100mil-500mil">100mil-500mil</option>
-          <option value="500mil-1millon">500mil-1millon</option>
-          <option value="1millon-2millones">1millon-2millones</option>
-          <option value="más de 2 millones">más de 2 millones</option>
+        <select id="u13_input" name="rangosal_reg">
+          <?php include('catalogo_rsalario.php');
+          	?>
         </select>
       </div>
 
