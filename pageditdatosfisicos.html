@@ -117,10 +117,8 @@
       <!-- drp_frecEjercicio_pagEditDatosFisicos (Droplist) -->
       <div id="u15" class="ax_droplist" data-label="drp_frecEjercicio_pagEditDatosFisicos">
         <select id="u15_input">
-          <option selected value="Diario">Diario</option>
-          <option value="Semanal">Semanal</option>
-          <option value="Ocacional">Ocacional</option>
-          <option value="Nunca">Nunca</option>
+          <?php include('catalogo_frec_ejercicio.php');
+           ?>
         </select>
       </div>
 
@@ -207,18 +205,16 @@
       <!-- drp_bebes_pagEditDatosFisicos (Droplist) -->
       <div id="u28" class="ax_droplist" data-label="drp_bebes_pagEditDatosFisicos">
         <select id="u28_input">
-          <option value="Diariamente">Diariamente</option>
-          <option value="Ocacionalmente">Ocacionalmente</option>
-          <option value="Socialmente">Socialmente</option>
-          <option selected value="Nunca">Nunca</option>
+          <?php include('catalogo_bebedor.php');
+           ?>
         </select>
       </div>
 
       <!-- drp_fumas_pagEditDatosFisicos (Droplist) -->
       <div id="u29" class="ax_droplist" data-label="drp_fumas_pagEditDatosFisicos">
         <select id="u29_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+          <option value="1">Si</option>
+          <option value="0">No</option>
         </select>
       </div>
 
