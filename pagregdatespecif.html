@@ -116,8 +116,8 @@
       <!-- drp_hijos_futur (Droplist) -->
       <div id="u14" class="ax_droplist" data-label="drp_hijos_futur">
         <select id="u14_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+          <option value="1">Si</option>
+          <option value="0">No</option>
         </select>
       </div>
 
@@ -128,7 +128,7 @@
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-          <option value="4 o más">4 o más</option>
+          <option value="4">4 o más</option>
         </select>
       </div>
 
@@ -203,42 +203,32 @@
       <!-- drp_mascotaFuturo (Droplist) -->
       <div id="u31" class="ax_droplist" data-label="drp_mascotaFuturo">
         <select id="u31_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+          <option value="1">Si</option>
+          <option value="0">No</option>
         </select>
       </div>
 
       <!-- drp_poseeMascota (Droplist) -->
       <div id="u32" class="ax_droplist" data-label="drp_poseeMascota">
         <select id="u32_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+          <option value="1">Si</option>
+          <option value="0">No</option>
         </select>
       </div>
 
       <!-- drp_gustaMascota (Droplist) -->
       <div id="u33" class="ax_droplist" data-label="drp_gustaMascota">
         <select id="u33_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+          <option value="1">Si</option>
+          <option value="0">No</option>
         </select>
       </div>
 
       <!-- drp_signoZodiaco (Droplist) -->
       <div id="u34" class="ax_droplist" data-label="drp_signoZodiaco">
         <select id="u34_input">
-          <option value="Aries">Aries</option>
-          <option value="Tauro">Tauro</option>
-          <option value="Géminis">Géminis</option>
-          <option value="Cáncer">Cáncer</option>
-          <option selected value="Leo">Leo</option>
-          <option value="Virgo">Virgo</option>
-          <option value="Libra">Libra</option>
-          <option value="Escorpio">Escorpio</option>
-          <option value="Sagitario">Sagitario</option>
-          <option value="Capricornio">Capricornio</option>
-          <option value="Acuario">Acuario</option>
-          <option value="Piscis">Piscis</option>
+          <?php include('catalogo_sig_zodiaco.php');
+          	?>
         </select>
       </div>
 
