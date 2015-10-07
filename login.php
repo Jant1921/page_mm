@@ -42,19 +42,19 @@ if (isset($_POST['boton_login'])) {
             
             //se carga el nombre completo de la persona
             $stid = oci_parse($conn, 'begin :resultado := get_person_nombre(:id_persona);end;');
-            oci_bind_by_name($stid,':resultado',$person_nombre,30);
-            oci_bind_by_name($stid,':id_persona',$person_id);
+            oci_bind_by_name($stid,':resultado',$person_nombre,30);  //30 es tamaño maximo que puede guardar person_nombre
+            oci_bind_by_name($stid,':id_persona',$person_id);  //resultado ya es lo retorna el script
             oci_execute($stid);
             
-            $stid = oci_parse($conn, 'begin :resultado := select_prim_apellido(:id_persona);end;');
-            oci_bind_by_name($stid,':resultado',$person_pApellido,30);
-            oci_bind_by_name($stid,':id_persona',$person_id);
-            oci_execute($stid);
+            $stid = oci_parse($conn, 'begin :resultado := select_prim_apellido(:id_persona);end;'); //select_prim apellido.... es los selects
+            oci_bind_by_name($stid,':resultado',$person_pApellido,30);                      //que tenemos guardados
+            oci_bind_by_name($stid,':id_persona',$person_id);   
+            oci_execute($stid);  //ejecuta stid, con los parametros colocados
             
-            $person_nombre.=" ".$person_pApellido;
+            $person_nombre.=" ".$person_pApellido;    //concatena nombre y apellido 
             
             $stid = oci_parse($conn, 'begin :resultado := select_seg_apellido(:id_persona);end;');
-            oci_bind_by_name($stid,':resultado',$person_sApellido,30);
+            oci_bind_by_name($stid,':resultado',$person_sApellido,30);  
             oci_bind_by_name($stid,':id_persona',$person_id);
             oci_execute($stid);
             
