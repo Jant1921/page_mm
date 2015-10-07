@@ -207,9 +207,8 @@ include('create_event.php');
       <!-- drp_lugar_PagCrearEvento (Droplist) -->
       <div id="u32" class="ax_droplist" data-label="drp_lugar_PagCrearEvento">
         <select id="u32_input" name="pais_evento">
-          <option value="Costa Rica">Costa Rica</option>
-          <option value="España">España</option>
-          <option value="Estados Unidos">Estados Unidos</option>
+          <?php include('catalogo_pais.php');
+          	?>
         </select>
       </div>
 
