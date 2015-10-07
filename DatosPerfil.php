@@ -1,7 +1,6 @@
 <?php
 session_start();
 $id_pers=$_SESSION['signed_id'];
-echo $id_pers;
 $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
     if (!$conn) {
         $error = "No se pudo conectar con la base de datos";
@@ -174,13 +173,10 @@ oci_execute($stid);
 
 //obtener el genero de la pareja q se busca
 $stid = oci_parse($conn, 'begin :resultado := get_tipo_pareja(:person_id);end;');
-oci_bind_by_name($stid,':resultado',$id_gpareja,10);
+oci_bind_by_name($stid,':resultado',$pareja_genero,30);
 oci_bind_by_name($stid,':person_id',$id_pers);
 oci_execute($stid);
-$stid = oci_parse($conn, 'begin :resultado := get_genero_cat(:genero_id);end;');
-oci_bind_by_name($stid,':resultado',$pareja_genero,30);
-oci_bind_by_name($stid,':genero_id',$id_gpareja);
-oci_execute($stid);
+
 // Initializing Session
 
     }
