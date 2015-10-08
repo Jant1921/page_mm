@@ -1,6 +1,4 @@
-<?php
-include('pagEditarRegistro.php');
-?>﻿
+﻿<?php include('pagEditarRegistro.php'); ?>﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -72,6 +70,9 @@ include('pagEditarRegistro.php');
         </div>
       </div>
 
+
+<form method="post" action="">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+        
       <!-- drp_genero_pagEditarRegistro (Droplist) -->
       <div id="u5" class="ax_droplist" data-label="drp_genero_pagEditarRegistro">
         <select id="u5_input" name="in_genero">
@@ -80,18 +81,12 @@ include('pagEditarRegistro.php');
         </select>
       </div>
 
-      <!-- btn_guardarCambios_pagEditarRegistro (Shape) -->
-      <form method="post" action="">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
-          
+      <!-- btn_guardarCambios_pagEditarRegistro (Shape) --> 
       <div id="u6" class="ax_shape" data-label="btn_guardarCambios_pagEditarRegistro">
-        <img id="u6_img" class="img " src="images/pagcrearevento/btn_vermiseventos_pagcrearevento_u42.png"/>
-        <!-- Unnamed () -->
-        <div id="u7" class="text" >
-          <p><span>Guardar cambios</span></p>
-        </div>
+        <input type="submit" id="u7" name="btn_guardar" value="Guardar Cambios">
       </div>
           
-      </form>
+     
       
  
       <!-- Unnamed (Shape) -->
@@ -103,17 +98,14 @@ include('pagEditarRegistro.php');
         </div>
       </div>
 
-      <!-- txt_nombre_pagEditarRegistro (Text Field) 
+      <!-- txt_nombre_pagEditarRegistro (Text Field) -->
       <div id="u10" class="ax_text_field" data-label="txt_nombre_pagEditarRegistro">
-        <input id="u10_input" type="text" value="Cesar"/>
-      </div> -->
+        <?php
+        echo '<input id="u10_input" name="in_nombre" type="text" value="'.$person_nombre.'"/>';
+		?>
+      </div> 
       
-           <!-- txt_nombre_PagRegistro (Text Field) -->
-      <div id="u10" class="ax_text_field" data-label="txt_nombre_PagRegistro">
-        <input id="u12_input" name="in_nombre" type="text" value=""/>
-      </div>
-
-      <!-- Unnamed (Shape) -->
+            <!-- Unnamed (Shape) -->
       <div id="u11" class="ax_paragraph">
         <img id="u11_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
@@ -133,12 +125,12 @@ include('pagEditarRegistro.php');
 
       <!-- txt_correo_pagEditarRegistro (Text Field) --
       <div id="u15" class="ax_text_field" data-label="txt_correo_pagEditarRegistro">
-        <input id="u15_input" type="email" value="cesar.millan@gmail.com"/>
+        <input id="u15_input"  type="email" value="cesar.millan@gmail.com"/>
       </div> -->
       
            <!-- txt_nombre_PagRegistro (Text Field) -->
       <div id="u15" class="ax_text_field" data-label="txt_correo_pagEditarRegistro">
-        <input id="u15_input" name="in_correo" type="text" value=""/>
+        <input id="u15_input" name="in_correo" type="email" value=""/>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -150,11 +142,6 @@ include('pagEditarRegistro.php');
         </div>
       </div>
 
-      <!-- txt_fechNacimiento_pagEditarRegistro (Text Field) --
-      <div id="u18" class="ax_text_field" data-label="txt_fechNacimiento_pagEditarRegistro">
-        <input id="u18_input" name="in_fechNacimiento type="date" value=""/>
-      </div> -->
-      
          <!-- txt_fechNacimiento_PagRegistro (Text Field) -->
       <div id="u18" class="ax_text_field" data-label="txt_fechNacimiento_pagEditarRegistro">
         <input type="date" id="u18_input"  name="in_nacimiento" />
@@ -461,7 +448,9 @@ include('pagEditarRegistro.php');
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u76" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u76_input" name="in_usuario" type="text" value=""/>
+        <?php
+        echo '<input id="u76_input" name="in_usuario" type="text" value="'.$person_nombre.'"/>';
+		?>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -779,34 +768,15 @@ include('pagEditarRegistro.php');
 
       <!-- C Costa Rica (Droplist) -->
       <div id="u131" class="ax_droplist" data-label="C Costa Rica">
-        <select id="u131_input">
-          <option value="Cartago">Cartago</option>
-          <option value="San Jose">San Jose</option>
-          <option value="Alajuela">Alajuela</option>
-          <option value="Heredia">Heredia</option>
+        <select id="u131_input" name="in_ciudad">
+          <option value="4">Cartago</option>
+          <option value="1">San Jose</option>
+          <option value="2">Alajuela</option>
+          <option value="3">Heredia</option>
         </select>
       </div>
 
-      <!-- C España (Droplist) -->
-      <div id="u132" class="ax_droplist" data-label="C España">
-        <select id="u132_input">
-          <option value="Madrid">Madrid</option>
-          <option value="Barcelona">Barcelona</option>
-          <option value="Valencia">Valencia</option>
-        </select>
-      </div>
-
-      <!-- drp_ciudad_pagEditarRegistro (Droplist) -->
-      <div id="u133" class="ax_droplist" data-label="drp_ciudad_pagEditarRegistro">
-        <select id="u133_input" name="ciudad">
-          <option value="New York">New York</option>
-          <option value="Los Angeles">Los Angeles</option>
-          <option value="Texas">Texas</option>
-          <option value="Orlando">Orlando</option>
-          <option value="Miami">Miami</option>
-        </select>
-      </div>
-
+      
       <!-- lbl_pais (Shape) -->
       <div id="u134" class="ax_paragraph" data-label="lbl_pais">
         <img id="u134_img" class="img " src="resources/images/transparent.gif"/>
@@ -838,6 +808,7 @@ include('pagEditarRegistro.php');
           <p><span>Ciudad:</span></p>
         </div>
       </div>
+      </form>
     </div>
   </body>
 </html>
