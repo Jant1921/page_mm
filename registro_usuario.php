@@ -39,16 +39,8 @@ if (isset($_POST['boton_crear'])) {
         oci_bind_by_name($stid,':seg_apellido',$_POST['in_sapellido']);
         oci_bind_by_name($stid,':fecha',$_POST['in_nacimiento']);
         oci_bind_by_name($stid,':usuario',$_POST['in_usuario']);
-        $get_genero=oci_parse($conn,'begin :resul :=get_genero_id(:nom_gen); end;');
-        oci_bind_by_name($get_genero,':resul',$genero_id,2);
-        oci_bind_by_name($get_genero,':nom_gen',$_POST['in_genero']);
-        oci_execute($get_genero);
-        oci_bind_by_name($stid,':genero',$genero_id);
-        $get_ciudad=oci_parse($conn,'begin :resul :=get_ciudad_id(:nom_city); end;');
-        oci_bind_by_name($get_ciudad,':resul',$ciudad_id,4);
-        oci_bind_by_name($get_ciudad,':nom_city',$_POST['in_ciudad']);
-        oci_execute($get_ciudad);
-        oci_bind_by_name($stid,':residencia',$ciudad_id);
+        oci_bind_by_name($stid,':genero',$_POST['in_genero']);
+        oci_bind_by_name($stid,':residencia',$_POST['in_ciudad']);
         oci_execute($stid); 
         
         $scriptI='begin :result := get_id_persona_user(nombre => :nombre); end;';

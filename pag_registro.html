@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include('registro_usuario.php');
 ?>﻿
 <!DOCTYPE html>
@@ -53,9 +53,9 @@ include('registro_usuario.php');
            
         $(document).ready(function(){
 
-        $('#u30').change(function(){
-
-        $('#u31').load('catalogo_ciudadxpais.php');
+        $('#u30_input').change(function(){
+		var id=$('#u30_input').val();
+        $('#u31_input').load('catalogo_ciudadxpais.php?id='+id);
 
        });    
 
@@ -213,10 +213,7 @@ include('registro_usuario.php');
       <!-- drp_ciudad_PagRegistro (Droplist) -->
       <div id="u31" class="ax_droplist" data-label="drp_ciudad_PagRegistro">
         <select id="u31_input"  name="in_ciudad" >
-          <option value="Cartago">Cartago</option>
-          <option value="San Jose">San Jose</option>
-          <option value="Alajuela">Alajuela</option>
-          <option value="Heredia">Heredia</option>
+          <option value=0>Seleccione un País</option>
         </select>
       </div>
       
