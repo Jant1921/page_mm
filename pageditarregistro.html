@@ -1,4 +1,8 @@
-﻿<?php include('pagEditarRegistro.php'); ?>﻿
+﻿<?php 
+    include('pagEditarRegistro.php'); 
+ ?>﻿
+
+﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -102,7 +106,7 @@
       <div id="u10" class="ax_text_field" data-label="txt_nombre_pagEditarRegistro">
         <?php
         echo '<input id="u10_input" name="in_nombre" type="text" value="'.$person_nombre.'"/>';
-		?>
+	?>
       </div> 
       
             <!-- Unnamed (Shape) -->
@@ -130,7 +134,9 @@
       
            <!-- txt_nombre_PagRegistro (Text Field) -->
       <div id="u15" class="ax_text_field" data-label="txt_correo_pagEditarRegistro">
-        <input id="u15_input" name="in_correo" type="email" value=""/>
+        <?php
+            echo '<input id="u15_input" name="in_correo type="email" value="'.$person_correo.'"/>';
+	?>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -144,7 +150,7 @@
 
          <!-- txt_fechNacimiento_PagRegistro (Text Field) -->
       <div id="u18" class="ax_text_field" data-label="txt_fechNacimiento_pagEditarRegistro">
-        <input type="date" id="u18_input"  name="in_nacimiento" />
+        <input type="date" id="u18_input"  name="in_nacimiento" value/>
       </div>
            
       <!-- Unnamed (Shape) -->
@@ -755,8 +761,12 @@
 
       <!-- txt_primerApellido_pagEditarRegistro (Text Field) -->
       <div id="u129" class="ax_text_field" data-label="txt_primerApellido_pagEditarRegistro">
-        <input id="u129_input" name="in_primer_apellido" type="text" value="Millan"/>
+        <?php
+        echo '<input id="u129_input" name="in_primer_apellido" type="text" value="'.$person_primer_apellido.'"/>';
+             
+	?>
       </div>
+      
 
       <!-- drp_ubicacion_pagEditarRegistro (Droplist) -->
       <div id="u130" class="ax_droplist" data-label="drp_ubicacion_pagEditarRegistro">
@@ -797,7 +807,9 @@
 
       <!-- txt_segundoApellido_pagEditarRegistro (Text Field) -->
       <div id="u138" class="ax_text_field" data-label="txt_segundoApellido_pagEditarRegistro">
-        <input id="u138_input" name="in_segundo_apellido" type="text" value=""/>
+        <?php
+        echo '<input id="u138_input" name="in_segundo_apellido type="text" value="'.$person_segundo_apellido.'"/>';
+	?>
       </div>
 
       <!-- lbl_pais (Shape) -->

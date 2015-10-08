@@ -1,12 +1,13 @@
 <?php
 include('sesion.php');
+
 $error=''; // Variable To Store Error Message... el mensaje de error
 if (isset($_POST['btn_guardar'])) {   // si el boton es presionado que verifique si cada uno de esos campos son  diferente de vacios
     if ( (empty($_POST['in_nombre']) || empty($_POST['in_primer_apellido']) || empty($_POST['in_segundo_apellido']) ||
             empty($_POST['in_genero']) || empty($_POST['in_nacimiento']) ||
              empty($_POST['in_pais']) ||
              empty($_POST['in_ciudad'])||empty($_POST['in_correo']))) {  // (in_nombre) nombre del campo en la interfaz
-    $error = "Ningún campo puede quedar vacío";  //si hay alguno vacio, tira error
+    $error = "Ningï¿½n campo puede quedar vacï¿½o";  //si hay alguno vacio, tira error
     echo $error;
     }
     else{
@@ -14,7 +15,26 @@ if (isset($_POST['btn_guardar'])) {   // si el boton es presionado que verifique
     if (!$conn) {
         $error = "No se pudo conectar con la base de datos";  //si no se pudo dar la conexion, error!
     } else {
-              
+        
+//obtener primer apellido de la persona      
+        $stid = oci_parse($conn, 'begin :resultado := get_primer_apellido(:person_id);end;');
+        oci_bind_by_name($stid,':resultado',$person_primer_apellido,30);
+        oci_bind_by_name($stid,':person_id',$id_pers);
+        oci_execute($stid);
+
+        //obtener segundo apellido de la persona
+        $stid = oci_parse($conn, 'begin :resultado := get_segundo_apellido(:person_id);end;');
+        oci_bind_by_name($stid,':resultado',$person_segundo_apellido,30);
+        oci_bind_by_name($stid,':person_id',$id_pers);
+        oci_execute($stid);
+
+        //obtener fecha nacimiento
+        $stid = oci_parse($conn, 'begin :resultado := get_fechaNacimiento(:person_id);end;');
+        oci_bind_by_name($stid,':resultado',$person_fecha_nacimiento,30);
+        oci_bind_by_name($stid,':person_id',$id_pers);
+        oci_execute($stid);
+
+            
         $scriptU='begin update_persona(:id_p,:nombre,:papellido,:sapellido,:genero,:ciudad,:fecha);end;';//se puede hacer pegado, ver login
         $stid = oci_parse($conn,$scriptU);  //para ejecutar el script
         
