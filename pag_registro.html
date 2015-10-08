@@ -201,10 +201,10 @@ include('registro_usuario.php');
           <p><span>Complete la siguiente información, ningún espacio debe quedar vacío.</span></p>
         </div>
       </div>
-      <form action="" method="POST">
+    
       <!-- drp_ubicacion_PagRegistro (Droplist) -->
       <div id="u30" class="ax_droplist" data-label="drp_ubicacion_PagRegistro" >
-          <select id="u30_input"  name="in_pais" onchange="this.form.submit();">
+          <select id="u30_input"  name="in_pais" >
           <?php include('catalogo_pais.php');
           	?>
         </select>
@@ -219,7 +219,7 @@ include('registro_usuario.php');
           <option value="Heredia">Heredia</option>
         </select>
       </div>
-      </form>
+      
       <!-- lbl_pais (Shape) -->
       <div id="u34" class="ax_paragraph" data-label="lbl_pais">
         <img id="u34_img" class="img " src="resources/images/transparent.gif"/>
