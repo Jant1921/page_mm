@@ -48,6 +48,21 @@ include('registro_usuario.php');
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+       <script type="text/javascript">
+           
+        $(document).ready(function(){
+
+        $('#u30').change(function(){
+
+        $('#u31').load('catalogo_ciudadxpais.php');
+
+       });    
+
+       });
+        
+</script>
+ 
   </head>
   <body>
     <div id="base" class="">
@@ -186,10 +201,10 @@ include('registro_usuario.php');
           <p><span>Complete la siguiente información, ningún espacio debe quedar vacío.</span></p>
         </div>
       </div>
-
+      <form action="" method="POST">
       <!-- drp_ubicacion_PagRegistro (Droplist) -->
-      <div id="u30" class="ax_droplist" data-label="drp_ubicacion_PagRegistro">
-        <select id="u30_input"  name="in_pais" >
+      <div id="u30" class="ax_droplist" data-label="drp_ubicacion_PagRegistro" >
+          <select id="u30_input"  name="in_pais" onchange="this.form.submit();">
           <?php include('catalogo_pais.php');
           	?>
         </select>
@@ -204,6 +219,7 @@ include('registro_usuario.php');
           <option value="Heredia">Heredia</option>
         </select>
       </div>
+      </form>
       <!-- lbl_pais (Shape) -->
       <div id="u34" class="ax_paragraph" data-label="lbl_pais">
         <img id="u34_img" class="img " src="resources/images/transparent.gif"/>
