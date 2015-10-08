@@ -75,9 +75,8 @@ include('pagEditarRegistro.php');
       <!-- drp_genero_pagEditarRegistro (Droplist) -->
       <div id="u5" class="ax_droplist" data-label="drp_genero_pagEditarRegistro">
         <select id="u5_input" name="in_genero">
-          <option selected value="Hombre">Hombre</option>
-          <option value="Transexual">Transexual</option>
-          <option value="Mujer">Mujer</option>
+          <?php include('catalogo_genero.php');
+          	?>
         </select>
       </div>
 
@@ -773,9 +772,8 @@ include('pagEditarRegistro.php');
       <!-- drp_ubicacion_pagEditarRegistro (Droplist) -->
       <div id="u130" class="ax_droplist" data-label="drp_ubicacion_pagEditarRegistro">
         <select id="u130_input" name="in_pais">
-          <option value="Costa Rica">Costa Rica</option>
-          <option value="España">España</option>
-          <option value="Estados Unidos">Estados Unidos</option>
+          <?php include('catalogo_pais.php');
+          	?>
         </select>
       </div>
 
