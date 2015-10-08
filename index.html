@@ -1,6 +1,5 @@
 ﻿<?php
 include('login.php');
-
 if(isset($_SESSION['signed_id'])){ //hay que cambiar el nombre de la variable
 header("location: pag_inicio.html");
 }
@@ -93,12 +92,12 @@ header("location: pag_inicio.html");
     </form>
 
       <!-- btn_registrarse_home (Dynamic Panel) -->
-      <div id="u11" data-label="btn_registrarse_home">
-        <form method="post" action="pag_terminos_y_condiciones.html">
-          <input type="submit" id="u12" name="boton_registrarse" value="Registrarse">
-        <form/>
-      </div>
-
+      <form method="post" action="pag_terminos_y_condiciones.html">
+        <div id="u11" data-label="btn_registrarse_home">
+          <input type="submit" id="u12" name="boton_registrarse" value=" Registrarse  ">
+       
+     	 </div>
+ 	<form/>
       <!-- Unnamed (BarraSuperior) -->
 
       <!-- BarraSuperior (Shape) -->
