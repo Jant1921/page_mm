@@ -75,9 +75,8 @@ include('registro_usuario.php');
       <!-- drp_genero_PagRegistro (Droplist) -->              <!-- Dentro del form solo puede haber 1 boton -->
       <div id="u5" class="ax_droplist" data-label="drp_genero_PagRegistro">
         <select id="u5_input" name="in_genero" >
-          <option selected value="Hombre">Hombre</option>
-          <option value="Transexual">Transexual</option>
-          <option value="Mujer">Mujer</option>
+          <?php include('catalogo_genero.php');
+          	?>
         </select>
       </div>
 
@@ -191,7 +190,8 @@ include('registro_usuario.php');
       <!-- drp_ubicacion_PagRegistro (Droplist) -->
       <div id="u30" class="ax_droplist" data-label="drp_ubicacion_PagRegistro">
         <select id="u30_input"  name="in_pais" >
-          <option value="Costa Rica">Costa Rica</option>
+          <?php include('catalogo_pais.php');
+          	?>
         </select>
       </div>
 
