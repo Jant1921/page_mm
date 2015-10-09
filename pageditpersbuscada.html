@@ -1,4 +1,6 @@
-
+﻿<?php
+include('sesion.php');
+?>﻿
 <!DOCTYPE html>
 <html>
   <head>
@@ -72,11 +74,7 @@
 
       <!-- btn_guardar_pagEditPersBuscada (Shape) -->
       <div id="u5" class="ax_shape" data-label="btn_guardar_pagEditPersBuscada">
-        <img id="u5_img" class="img " src="images/pagpersonabuscada/btn_continuar_pagpersonabuscada_u9.png"/>
-        <!-- Unnamed () -->
-        <div id="u6" class="text">
-          <p><span>Guardar</span></p>
-        </div>
+        <input type="submit" id="u6" name="btn_guardar" value="Guardar">
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -327,7 +325,11 @@
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u52" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u52_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+         <div id="u57_input" class="text">      <!--imprime el nombre de la persona en la esquina superior derecha -->
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';   
+        ?>
+        </div>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -614,11 +616,7 @@
 
       <!-- btn_cancelar_pagEditPersBuscada (Shape) -->
       <div id="u101" class="ax_shape" data-label="btn_cancelar_pagEditPersBuscada">
-        <img id="u101_img" class="img " src="images/pageditpersbuscada/btn_cancelar_pageditpersbuscada_u101.png"/>
-        <!-- Unnamed () -->
-        <div id="u102" class="text">
-          <p><span>Cancelar</span></p>
-        </div>
+        <input type="submit" id="u102" name="btn_guardar" value="Guardar Cambios">
       </div>
 
       <!-- Unnamed (Shape) -->
