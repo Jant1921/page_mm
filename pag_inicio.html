@@ -1,6 +1,6 @@
 ﻿<?php
 include('sesion.php');
-
+include('show_match.php');
 ?>﻿
 ﻿<!DOCTYPE html>
 <html>
@@ -54,13 +54,6 @@ include('sesion.php');
     <div id="base" class="">
 
       <!-- Unnamed (Shape) -->
-      <div id="u0" class="ax_shape">
-        <img id="u0_img" class="img " src="images/pag_match/u119.png"/>
-        <!-- Unnamed () -->
-        <div id="u1" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
 
       <!-- Unnamed (BarraSuperior) -->
 
@@ -90,10 +83,21 @@ include('sesion.php');
           <p><span style="text-decoration:underline;">Personas Sugeridas</span></p>
         </div>
       </div>
-
+		<?php
+		$conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
+    	
+		if($cantidad>= $posicion +1){
+		$nombre1=show_nombre($person_suger[$posicion]);
+		echo '<div id="u0" class="ax_shape">
+        <img id="u0_img" class="img " src="images/pag_match/u119.png"/>
+        <!-- Unnamed () -->
+        <div id="u1" class="text">
+          <p><span></span></p>
+        </div>
+      </div>
       <!-- img_persona1 (Image) -->
       <div id="u9" class="ax_image" data-label="img_persona1">
-        <img id="u9_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <img id="u9_img" class="img " src="fotos/bg.jpg"/>
         <!-- Unnamed () -->
         <div id="u10" class="text">
           <p><span></span></p>
@@ -105,7 +109,7 @@ include('sesion.php');
         <img id="u11_img" class="img " src="images/pag_match/botonpagmatchpersona1_u123.png"/>
         <!-- Unnamed () -->
         <div id="u12" class="text">
-          <p><span>Nombre</span></p>
+          <p><span>'.$nombre1.'</span></p>
         </div>
       </div>
 
@@ -123,11 +127,13 @@ include('sesion.php');
         <!--><div id="u15" class="text">
           <p><span>Visitar</span></p>
         </div><!-->
-        <form method="get" action="close.php" >
+        <form method="post" action="perfilotros.html">
 		
-            <input id="u14_img"  class="img " type="submit" value="Visitar" /> 
-      </div>
-
+            <input id="u14_img" name="persona1" class="img " type="submit" value="Visitar" /> 
+		</form>
+      </div>';}
+	?>
+<!-- 					FIN DEL PRIMER CAMPO															 -->
       <!-- Unnamed (Menus) -->
 
       <!-- Unnamed (BarraSuperior) -->
@@ -658,30 +664,31 @@ include('sesion.php');
 
       <!-- btn_siguente (Shape) -->
       <div id="u108" class="ax_shape" data-label="btn_siguente">
-        <!--><img id="u108_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () 
-        <div id="u109" class="text">
-          <p><span>Siguiente</span></p>
-        </div><!-->
-        <form method="get" action="close.php" >
+        <?php
+      if($cantidad>($posicion+6)){
+      echo '<form method="post" action="" >
 		
-            <input id="u108_img"  class="img " type="submit" value="Siguiente" />
+            <input id="u108_img" name="btn_sig"  class="img " type="submit" value="Siguiente" />
+         </form>';}
+	  ?>
       </div>
 
       <!-- btn_anterior (Shape) -->
       <div id="u110" class="ax_shape" data-label="btn_anterior">
-        <!--<img id="u110_img" class="img " src="images/pag_match/btn_pagmatchvisitarpersona1_u126.png"/>
-        <!-- Unnamed () 
-        <div id="u111" class="text">
-          <p><span>Anterior</span></p>
-        </div>-->
-        <form method="get" action="close.php" >
+      <?php
+      if(!($posicion==0)){
+      echo '<form method="post" action="" >
 		
-            <input id="u110_img"  class="img " type="submit" value="Anterior" />
-      </div>
+            <input id="u110_img" name="btn_anterior" class="img " type="submit" value="Anterior" />
+        </form>';}
+      ?>
+		</div>
+	  
 
-      <!-- Unnamed (Shape) -->
-      <div id="u112" class="ax_shape">
+      <!--							 PERSONA #2 					-->
+      <?php
+      if($cantidad>= ($posicion +2)){
+      echo '<div id="u112" class="ax_shape">
         <img id="u112_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u113" class="text">
@@ -719,13 +726,16 @@ include('sesion.php');
         <div id="u120" class="text">
           <p><span>Visitar</span></p>
         </div>-->
-        <form method="get" action="close.php" >
-		
-            <input id="u119_img"  class="img " type="submit" value="Visitar" />
-      </div>
+        <form method="post" action="perfilotros.html" >
+            <input id="u119_img" name="persona2" class="img " type="submit" value="Visitar" />
+		</form>
+      </div>';}
+	?>
 
-      <!-- Unnamed (Shape) -->
-      <div id="u121" class="ax_shape">
+      <!-- 								PERSONA #3				 -->
+      <?php
+      if($cantidad>=($posicion+3)){
+      echo '<div id="u121" class="ax_shape">
         <img id="u121_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u122" class="text">
@@ -763,13 +773,17 @@ include('sesion.php');
         <div id="u129" class="text">
           <p><span>Visitar</span></p>
         </div>-->
-        <form method="get" action="close.php" >
+        <form method="post" action="perfilotros.html" >
 		
-            <input id="u128_img"  class="img " type="submit" value="Visitar" />
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u130" class="ax_shape">
+            <input id="u128_img"  name="persona3" class="img " type="submit" value="Visitar" />
+         </form>>
+      </div>';}
+		?>
+		
+      <!-- 							PERSONA 4 											-->
+      <?php
+      if($cantidad>=($posicion+4)){
+      echo '<div id="u130" class="ax_shape">
         <img id="u130_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u131" class="text">
@@ -807,13 +821,17 @@ include('sesion.php');
         <div id="u138" class="text">
           <p><span>Visitar</span></p>
         </div>-->
-        <form method="get" action="close.php" >
+        <form method="post" action="perfilotros.html" >
 		
-            <input id="u137_img"  class="img " type="submit" value="Visitar" />
-      </div>
+            <input id="u137_img" name="persona4" class="img " type="submit" value="Visitar" />
+            </form>
+      </div>';}
+		?>
 
       <!-- Unnamed (Shape) -->
-      <div id="u139" class="ax_shape">
+      <?php
+      if($cantidad>=($posicion+5)){
+      echo '<div id="u139" class="ax_shape">
         <img id="u139_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u140" class="text">
@@ -851,13 +869,17 @@ include('sesion.php');
         <div id="u147" class="text">
           <p><span>Visitar</span></p>
         </div>-->
-        <form method="get" action="close.php" >
+        <form method="post" action="perfilotros.html" >
 		
-            <input id="u146_img"  class="img " type="submit" value="Visitar" />
-      </div>
+            <input id="u146_img" name="persona5" class="img " type="submit" value="Visitar" />
+            </form>
+      </div>';}
+		?>
 
       <!-- Unnamed (Shape) -->
-      <div id="u148" class="ax_shape">
+      <?php
+      if($cantidad>=($posicion+6)){
+      echo '<div id="u148" class="ax_shape">
         <img id="u148_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u149" class="text">
@@ -895,10 +917,13 @@ include('sesion.php');
         <div id="u156" class="text">
           <p><span>Visitar</span></p>
         </div>-->
-        <form method="get" action="close.php" >
+        <form method="post" action="perfilotros.html" >
 		
-            <input id="u155_img"  class="img " type="submit" value="Visitar" />
-      </div>
+            <input id="u155_img" name="persona6" class="img " type="submit" value="Visitar" />
+         </form>
+      </div>';}
+	oci_close($conn);
+	?>
     </div>
   </body>
 </html>
