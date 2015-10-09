@@ -15,26 +15,8 @@ if (isset($_POST['btn_guardar'])) {   // si el boton es presionado que verifique
     if (!$conn) {
         $error = "No se pudo conectar con la base de datos";  //si no se pudo dar la conexion, error!
     } else {
+                  
         
-//obtener primer apellido de la persona      
-        $stid = oci_parse($conn, 'begin :resultado := get_primer_apellido(:person_id);end;');
-        oci_bind_by_name($stid,':resultado',$person_primer_apellido,30);
-        oci_bind_by_name($stid,':person_id',$id_pers);
-        oci_execute($stid);
-
-        //obtener segundo apellido de la persona
-        $stid = oci_parse($conn, 'begin :resultado := get_segundo_apellido(:person_id);end;');
-        oci_bind_by_name($stid,':resultado',$person_segundo_apellido,30);
-        oci_bind_by_name($stid,':person_id',$id_pers);
-        oci_execute($stid);
-
-        //obtener fecha nacimiento
-        $stid = oci_parse($conn, 'begin :resultado := get_fechaNacimiento(:person_id);end;');
-        oci_bind_by_name($stid,':resultado',$person_fecha_nacimiento,30);
-        oci_bind_by_name($stid,':person_id',$id_pers);
-        oci_execute($stid);
-
-            
         $scriptU='begin update_persona(:id_p,:nombre,:papellido,:sapellido,:genero,:ciudad,:fecha);end;';//se puede hacer pegado, ver login
         $stid = oci_parse($conn,$scriptU);  //para ejecutar el script
         
@@ -60,7 +42,7 @@ if (isset($_POST['btn_guardar'])) {   // si el boton es presionado que verifique
         oci_execute($stid);
         
         
-		if(empty($_POST['in_contrasena_nueva']) || empty($_POST['in_contrasena_actual']) 
+	if(empty($_POST['in_contrasena_nueva']) || empty($_POST['in_contrasena_actual']) 
             || empty($_POST['in_confirmar_contrasena'])){
 			
 		}else{
