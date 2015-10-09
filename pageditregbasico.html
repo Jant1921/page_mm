@@ -108,39 +108,32 @@
       <!-- drp_religion_pagEditRegBasico (Droplist) -->
       <div id="u13" class="ax_droplist" data-label="drp_religion_pagEditRegBasico">
         <select id="u13_input">
-          <option value="Católica">Católica</option>
-          <option value="Cristiana">Cristiana</option>
-          <option value="Budista">Budista</option>
-          <option value="Hinduista">Hinduista</option>
-          <option selected value="Islamica">Islamica</option>
+          <?php include('catalogo_religion.php');
+          	?>
         </select>
       </div>
 
       <!-- drp_ocupacion_pagEditRegBasico (Droplist) -->
       <div id="u14" class="ax_droplist" data-label="drp_ocupacion_pagEditRegBasico">
         <select id="u14_input">
-          <option value="Estudiante">Estudiante</option>
-          <option value="Desempleado">Desempleado</option>
-          <option selected value="Trabajador">Trabajador</option>
+          <?php include('catalogo_ocupacion.php');
+          	?>
         </select>
       </div>
 
       <!-- drp_nivelEducacion_pagEditRegBasico (Droplist) -->
       <div id="u15" class="ax_droplist" data-label="drp_nivelEducacion_pagEditRegBasico">
         <select id="u15_input">
-          <option selected value="Universitario">Universitario</option>
-          <option value="Escolar">Escolar</option>
-          <option value="Bachiller">Bachiller</option>
-          <option value="Doctorado">Doctorado</option>
+          <?php include('catalogo_educacion.php');
+          	?>
         </select>
       </div>
 
       <!-- drp_estadoCivil_pagEditRegBasico (Droplist) -->
       <div id="u16" class="ax_droplist" data-label="drp_estadoCivil_pagEditRegBasico">
         <select id="u16_input">
-          <option selected value="Soltero(a)">Soltero(a)</option>
-          <option value="Comprometido(a)">Comprometido(a)</option>
-          <option value="Casado(a)">Casado(a)</option>
+          <?php include('catalogo_ecivil.php');
+          	?>
         </select>
       </div>
 
@@ -410,7 +403,11 @@
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u66" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u66_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+        <div id="u66_input" class="text">      <!--imprime el nombre de la persona en la esquina superior derecha -->
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';   
+        ?>
+        </div>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
