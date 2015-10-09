@@ -455,7 +455,11 @@
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u75" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u75_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+        <div id="u75_input" class="text">      <!--imprime el nombre de la persona en la esquina superior derecha -->
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';   
+        ?>
+        </div>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->

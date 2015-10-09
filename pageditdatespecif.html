@@ -279,7 +279,11 @@
 
       <!-- txt_usuarioActual (Text Field) -->
       <div id="u41" class="ax_text_field boton_lateral" data-label="txt_usuarioActual">
-        <input id="u41_input" type="text" value="Pedro Joel Mármol Navas" readonly/>
+        <div id="u41_input" class="text">      <!--imprime el nombre de la persona en la esquina superior derecha -->
+        <?php
+        print '<p><span>'.$person_nombre.'</span></p>';   
+        ?>
+        </div>
       </div>
 
       <!-- Divisor Superior (Horizontal Line) -->
@@ -654,13 +658,7 @@
 
       <!-- drp_cantidad_hijos (Droplist) -->
       <div id="u107" class="ax_droplist" data-label="drp_cantidad_hijos">
-        <select id="u107_input">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4 o más">4 o más</option>
-        </select>
+        <input id="u107_input" type="number" value=""/>
       </div>
 
       <!-- Unnamed (Shape) -->
