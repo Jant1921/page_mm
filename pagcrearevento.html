@@ -49,6 +49,20 @@ include('create_event.php');
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+       <script type="text/javascript">
+           
+        $(document).ready(function(){
+
+        $('#u32_input').change(function(){
+		var id=$('#u32_input').val();
+        $('#u33_input').load('catalogo_ciudadxpais.php?id='+id);
+
+       });    
+
+       });
+        
+</script>
   </head>
   <body>
     <div id="base" class="">
@@ -215,10 +229,7 @@ include('create_event.php');
       <!-- C Costa Rica (Droplist) -->
       <div id="u33" class="ax_droplist" data-label="C Costa Rica">
         <select id="u33_input" name="ciudad_evento">
-          <option value="Cartago">Cartago</option>
-          <option value="San Jose">San Jose</option>
-          <option value="Alajuela">Alajuela</option>
-          <option value="Heredia">Heredia</option>
+          <option value=0>Seleccione un País</option>
         </select>
       </div>
 
@@ -261,16 +272,7 @@ include('create_event.php');
         </div>
       </div>
 
-      <!-- drp_ciudad_PagCrearEvento (Droplist) -->
-      <div id="u44" class="ax_droplist" data-label="drp_ciudad_PagCrearEvento">
-        <select id="u44_input">
-          <option value="New York">New York</option>
-          <option value="Los Angeles">Los Angeles</option>
-          <option value="Texas">Texas</option>
-          <option value="Orlando">Orlando</option>
-          <option value="Miami">Miami</option>
-        </select>
-      </div>
+     
 
       <!-- txb_descripcion_PagCrearEvento (Text Area) -->
       <div id="u45" class="ax_text_area" data-label="txb_descripcion_PagCrearEvento">
