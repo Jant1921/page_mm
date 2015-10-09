@@ -17,18 +17,20 @@ if (isset($_POST['btn_guardar'])) {   // si el boton es presionado que verifique
     } else {
                   
         
-        $scriptU='begin update_persona(:id_p,:nombre,:papellido,:sapellido,:genero,:ciudad,:fecha);end;';//se puede hacer pegado, ver login
+        $scriptU='begin update_persona(:id_p,:nombre,:papellido,:sapellido,:genero,:correo,:ciudad,:fecha);end;';//se puede hacer pegado, ver login
         $stid = oci_parse($conn,$scriptU);  //para ejecutar el script
         
         $nom_us=$_POST['in_nombre'];     //busca el nombre q tenia ese nombre
         $pApellido_us=$_POST['in_primer_apellido'];     //todo lo que dice POST esta en interfaz
         $sApellido_us=$_POST['in_segundo_apellido'];
+        $person_correo=$_POST['in_correo'];
         $genero_us=$_POST['in_genero'];
         $ciudad_us=$_POST['in_ciudad'];
         oci_bind_by_name($stid,':id_p',$id_pers);
         oci_bind_by_name($stid,':nombre',$nom_us); //oci_bind_by_name, sustituir los parametros de script U, por valores reales.
         oci_bind_by_name($stid,':papellido',$pApellido_us);
         oci_bind_by_name($stid,':sapellido',$sApellido_us);
+        oci_bind_by_name($stid,':correo',$correo_us);
         oci_bind_by_name($stid,':genero',$genero_us);
         oci_bind_by_name($stid,':ciudad',$ciudad_us);
         oci_bind_by_name($stid,':fecha',$_POST['in_nacimiento']);

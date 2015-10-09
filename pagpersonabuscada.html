@@ -55,7 +55,8 @@ include('sesion.php');
       <!-- Unnamed (BarraSuperior) -->
 
       <!-- BarraSuperior (Shape) -->
-      <div id="u1" class="ax_shape" data-label="BarraSuperior">
+      <form method="post" action="">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+          <div id="u1" class="ax_shape" data-label="BarraSuperior">
         <img id="u1_img" class="img " src="images/home/barrasuperior_u17.png"/>
         <!-- Unnamed () -->
         <div id="u2" class="text">
@@ -169,7 +170,7 @@ include('sesion.php');
 
       <!-- drp_genero (Droplist) -->
       <div id="u27" class="ax_droplist" data-label="drp_genero">
-        <select id="u27_input">
+        <select id="u27_input" name="in_genero">
             <?php include('catalogo_genero.php');
            ?>
         </select>
@@ -186,13 +187,15 @@ include('sesion.php');
 
       <!-- txt_emin (Text Field) -->
       <div id="u30" class="ax_text_field" data-label="txt_emin">
-        <input id="u30_input" type="number" value=""/>
+        <input id="u30_input" name="in_emin" type="number" value=""/>
       </div>
 
       <!-- txt_emax (Text Field) -->
       <div id="u31" class="ax_text_field" data-label="txt_emax">
-        <input id="u31_input" type="number" value=""/>
+        <input id="u31_input" name="in_emax" type="number" value=""/>
       </div>
+      </form>
+      
     </div>
   </body>
 </html>
