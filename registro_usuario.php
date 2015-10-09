@@ -75,6 +75,7 @@ if (isset($_POST['boton_crear'])) {
         $_SESSION['signed_sApellido']=$person_sApellido;
         $_SESSION['signed_correo']=$person_correo;
         
+        
         header("location: pagpersonabuscada.html");
     
     }
