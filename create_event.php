@@ -23,19 +23,20 @@
 				$error = "No se pudo conectar con la base de datos";
 			} else {
 				$script_insert='begin
-							insertar_evento(:nombre,
-											:lugar,
-											:hora,
-											:fecha);
-							commit;
-							end;';
+  					insertar_evento(nombre => :nombre,
+                  lugar => :lugar,
+                  hora => :hora,
+                  fecha => :fecha,
+                  descrip => :descrip);
+					commit;
+				end;';
 			
 				$stid = oci_parse($conn,$script_insert);
 				oci_bind_by_name($stid,':nombre',$nombre_evento);
 				oci_bind_by_name($stid,':lugar',$ciudad_evento);
 				oci_bind_by_name($stid,':hora',$hora_evento);
 				oci_bind_by_name($stid,':fecha',$fecha_evento);
-				oci_bind_by_name($stdi,':desc', $variable);
+				oci_bind_by_name($stid,':descrip',$descripcion_evento);
 				oci_execute($stid);
 				
 				
@@ -46,7 +47,7 @@
 				
 				
 				oci_close($conn);
-				header("location: pag_inicio.html");
+				header("location: pagcrearevento.html");
 			}
 			
 			

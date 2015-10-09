@@ -88,6 +88,7 @@ include('show_match.php');
     	
 		if($cantidad>= $posicion +1){
 		$nombre1=show_nombre($person_suger[$posicion]);
+		$datos1=show_datos($person_suger[$posicion]);
 		echo '<div id="u0" class="ax_shape">
         <img id="u0_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -115,7 +116,7 @@ include('show_match.php');
 
       <!-- txt_DatosPersona1 (Text Field) -->
       <div id="u13" class="ax_text_field" data-label="txt_DatosPersona1">
-        <input id="u13_input" type="text" value="Género,Edad, Ubicación..." readonly/>
+        <input id="u13_input" type="text" value="'.$datos1.'" readonly/>
       </div>
 
       <!-- btn_PagMatchVisitarPersona1 (Shape) -->
@@ -688,7 +689,9 @@ include('show_match.php');
       <!--							 PERSONA #2 					-->
       <?php
       if($cantidad>= ($posicion +2)){
-      echo '<div id="u112" class="ax_shape">
+      $nombre2=show_nombre($person_suger[$posicion+1]);
+	  $datos2=show_datos($person_suger[$posicion+1]);
+	  echo '<div id="u112" class="ax_shape">
         <img id="u112_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u113" class="text">
@@ -710,13 +713,13 @@ include('show_match.php');
         <img id="u116_img" class="img " src="images/pag_match/botonpagmatchpersona1_u123.png"/>
         <!-- Unnamed () -->
         <div id="u117" class="text">
-          <p><span>Nombre</span></p>
+          <p><span>'.$nombre2.'</span></p>
         </div>
       </div>
 
       <!-- txt_DatosPersona4 (Text Field) -->
       <div id="u118" class="ax_text_field" data-label="txt_DatosPersona4">
-        <input id="u118_input" type="text" value="Género,Edad, Ubicación..." readonly/>
+        <input id="u118_input" type="text" value="'.$datos2.'" readonly/>
       </div>
 
       <!-- btn_PagMatchVisitarPersona4 (Shape) -->
@@ -735,7 +738,9 @@ include('show_match.php');
       <!-- 								PERSONA #3				 -->
       <?php
       if($cantidad>=($posicion+3)){
-      echo '<div id="u121" class="ax_shape">
+      $nombre3=show_nombre($person_suger[$posicion+2]);
+	  $datos3=show_datos($person_suger[$posicion+2]);
+	  echo '<div id="u121" class="ax_shape">
         <img id="u121_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u122" class="text">
@@ -757,13 +762,13 @@ include('show_match.php');
         <img id="u125_img" class="img " src="images/pag_match/botonpagmatchpersona1_u123.png"/>
         <!-- Unnamed () -->
         <div id="u126" class="text">
-          <p><span>Nombre</span></p>
+          <p><span>'.$nombre3.'</span></p>
         </div>
       </div>
 
       <!-- txt_DatosPersona2 (Text Field) -->
       <div id="u127" class="ax_text_field" data-label="txt_DatosPersona2">
-        <input id="u127_input" type="text" value="Género,Edad, Ubicación..." readonly/>
+        <input id="u127_input" type="text" value="'.$datos3.'" readonly/>
       </div>
 
       <!-- btn_PagMatchVisitarPersona2 (Shape) -->
@@ -783,7 +788,9 @@ include('show_match.php');
       <!-- 							PERSONA 4 											-->
       <?php
       if($cantidad>=($posicion+4)){
-      echo '<div id="u130" class="ax_shape">
+      $nombre4=show_nombre($person_suger[$posicion+3]);
+	  $datos4=show_datos($person_suger[$posicion+3]);
+	  echo '<div id="u130" class="ax_shape">
         <img id="u130_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u131" class="text">
@@ -805,13 +812,13 @@ include('show_match.php');
         <img id="u134_img" class="img " src="images/pag_match/botonpagmatchpersona1_u123.png"/>
         <!-- Unnamed () -->
         <div id="u135" class="text">
-          <p><span>Nombre</span></p>
+          <p><span>'.$nombre4.'</span></p>
         </div>
       </div>
 
       <!-- txt_DatosPersona5 (Text Field) -->
       <div id="u136" class="ax_text_field" data-label="txt_DatosPersona5">
-        <input id="u136_input" type="text" value="Género,Edad, Ubicación..." readonly/>
+        <input id="u136_input" type="text" value="'.$datos4.'" readonly/>
       </div>
 
       <!-- btn_PagMatchVisitarPersona5 (Shape) -->
@@ -831,7 +838,9 @@ include('show_match.php');
       <!-- Unnamed (Shape) -->
       <?php
       if($cantidad>=($posicion+5)){
-      echo '<div id="u139" class="ax_shape">
+      $nombre5=show_nombre($person_suger[$posicion+4]);
+	  $datos5=show_datos($person_suger[$posicion+4]);
+		echo '<div id="u139" class="ax_shape">
         <img id="u139_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u140" class="text">
@@ -853,13 +862,13 @@ include('show_match.php');
         <img id="u143_img" class="img " src="images/pag_match/botonpagmatchpersona1_u123.png"/>
         <!-- Unnamed () -->
         <div id="u144" class="text">
-          <p><span>Nombre</span></p>
+          <p><span>'.$nombre5.'</span></p>
         </div>
       </div>
 
       <!-- txt_DatosPersona3 (Text Field) -->
       <div id="u145" class="ax_text_field" data-label="txt_DatosPersona3">
-        <input id="u145_input" type="text" value="Género,Edad, Ubicación..." readonly/>
+        <input id="u145_input" type="text" value="'.$datos5.'" readonly/>
       </div>
 
       <!-- btn_PagMatchVisitarPersona3 (Shape) -->
@@ -879,7 +888,9 @@ include('show_match.php');
       <!-- Unnamed (Shape) -->
       <?php
       if($cantidad>=($posicion+6)){
-      echo '<div id="u148" class="ax_shape">
+      $nombre6=show_nombre($person_suger[$posicion+5]);
+	  $datos6=show_datos($person_suger[$posicion+5]);
+	  echo '<div id="u148" class="ax_shape">
         <img id="u148_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
         <div id="u149" class="text">
@@ -901,13 +912,13 @@ include('show_match.php');
         <img id="u152_img" class="img " src="images/pag_match/botonpagmatchpersona1_u123.png"/>
         <!-- Unnamed () -->
         <div id="u153" class="text">
-          <p><span>Nombre</span></p>
+          <p><span>'.$nombre6.'</span></p>
         </div>
       </div>
 
       <!-- txt_DatosPersona6 (Text Field) -->
       <div id="u154" class="ax_text_field" data-label="txt_DatosPersona6">
-        <input id="u154_input" type="text" value="Género,Edad, Ubicación..." readonly/>
+        <input id="u154_input" type="text" value="'.$datos6.'" readonly/>
       </div>
 
       <!-- btn_PagMatchVisitarPersona6 (Shape) -->

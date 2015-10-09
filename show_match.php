@@ -10,11 +10,29 @@ function show_nombre($id){
 	return $resul;
 }
 
+function show_datos($id){
+	$conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
+	$stid = oci_parse($conn, "begin :result:=datos_persona(:codigo);end;");
+	oci_bind_by_name($stid,":result",$resul,100);
+	oci_bind_by_name($stid,":codigo",$id);
+	oci_execute($stid);
+	oci_close($conn);
+	return $resul;
+}
+
 $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
 if (isset($_POST['btn_anterior'])){
-
+	$person_suger=$_SESSION['personas'];
+	$cantidad=$_SESSION['cantidad_personas'];
+	$posicion=$_SESSION['offset'];
+	$posicion=$posicion-6;
+	$_SESSION['offset']=$posicion;
 }elseif (isset($_POST['btn_sig'])) {
-
+	$person_suger=$_SESSION['personas'];
+	$cantidad=$_SESSION['cantidad_personas'];
+	$posicion=$_SESSION['offset'];
+	$posicion=$posicion+6;
+	$_SESSION['offset']=$posicion;
 }else{
 	$stid = oci_parse($conn, "begin busqueda(:usuario);end;");
     oci_bind_by_name($stid,":usuario",$id_pers);
