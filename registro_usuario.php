@@ -32,6 +32,7 @@ if (isset($_POST['boton_crear'])) {
                                             usuario => :usuario,
                                             genero => :genero,
                                         residencia => :residencia);
+        					commit;
                 end;";
         $stid = oci_parse($conn,$scriptP);
         oci_bind_by_name($stid,':nombre',$_POST['in_nombre']);
@@ -70,6 +71,9 @@ if (isset($_POST['boton_crear'])) {
         $person_nombre.=" ".$person_sApellido;
         
         $_SESSION['signed_nombre']=$person_nombre;
+        $_SESSION['signed_pApellido']=$person_pApellido;
+        $_SESSION['signed_sApellido']=$person_sApellido;
+        $_SESSION['signed_correo']=$person_correo;
         
         header("location: pagpersonabuscada.html");
     

@@ -32,17 +32,10 @@
 			
 				$stid = oci_parse($conn,$script_insert);
 				oci_bind_by_name($stid,':nombre',$nombre_evento);
-				
-				
-				$ciudad_id=2;
-				//$get_city=oci_parse($conn,'begin :result := selectidciudad(:nombreciudad);end;');
-				//oci_bind_by_name($get_city,':result',$ciudad_id,4);
-				//oci_bind_by_name($get_city,':nombreciudad',$ciudad_evento);
-				//oci_excecute($get_city);
-				
-				oci_bind_by_name($stid,':lugar',$ciudad_id);
+				oci_bind_by_name($stid,':lugar',$ciudad_evento);
 				oci_bind_by_name($stid,':hora',$hora_evento);
 				oci_bind_by_name($stid,':fecha',$fecha_evento);
+				oci_bind_by_name($stdi,':desc', $variable);
 				oci_execute($stid);
 				
 				
