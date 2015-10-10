@@ -55,13 +55,13 @@ if (isset($_POST['btn_guarda_de'])) {   // si el boton es presionado que verifiq
         oci_execute($stid);
         
         $person_gmasc=$_POST['in_gmascotas'];
-        $scriptU='begin updatePesoPersona((idPersona => :id_p,gustaMascota => :gmasc);end;';
+        $scriptU='begin updatePesoPersona(idPersona => :id_p,gustaMascota => :gmasc);end;';
         $stid = oci_parse($conn,$scriptU);
          oci_bind_by_name($stid,':gmasc',$person_gmasc);
          oci_bind_by_name($stid,':id_p',$id_pers);
         oci_execute($stid);
 
-        header("location: pag_inicio.html");
+        header("location: perfil.html");
     
     }
     
