@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include('sesion.php');
+?>
+<!DOCTYPE html>
 <html>
   <head>
       
@@ -53,7 +56,7 @@
         $(document).ready(function(){
 
         $('#u98').click(function(){
-		var emin=$('#u94_input').val(),
+		var emin=$('#u94_input').val();
                 var emax=$('#u101_input').val();
         $('#u107_input').load('est_rango_edad.php',{x:emin,y:emax} );
 
@@ -604,11 +607,22 @@
           <p><span>Cantidad de personas en rango de edad: </span></p>
         </div>
       </div>
-
+		<form method="post" action="est_rango_edad.php">
       <!-- drp_minimo_pagEstadisticas (Droplist) -->
       <div id="u94" class="ax_text_field" data-label="drp_minimo_pagEstadisticas">
          <input id="u94_input" type="number" value="" name='edmin'/>
       </div>
+      
+      <!-- drp_maximo_pagEstadisticas (Droplist) -->
+      <div id="u101" class="ax_droplist" data-label="drp_maximo_pagEstadisticas">
+         <input id="u101_input" type="number" value="" name='edmax'/>
+      </div>
+      
+      <!-- btn_ActualizaRangoEdad_pagEstadisticas (Shape) -->
+      <div id="u97" class="ax_shape" data-label="btn_ActualizaRangoEdad_pagEstadisticas">
+       <input type="submit" id="u98" name="btn_act_redad" value="Actualizar ">
+      </div>
+      </form>
 
       <!-- lbl_minRango (Shape) -->
       <div id="u95" class="ax_paragraph txt_perfil" data-label="lbl_minRango">
@@ -619,10 +633,7 @@
         </div>
       </div>
 
-      <!-- btn_ActualizaRangoEdad_pagEstadisticas (Shape) -->
-      <div id="u97" class="ax_shape" data-label="btn_ActualizaRangoEdad_pagEstadisticas">
-       <input type="submit" id="u98" name="btn_act_redad" value="Actualizar ">
-      </div>
+      
 
       <!-- lbl_minRango (Shape) -->
       <div id="u99" class="ax_paragraph txt_perfil" data-label="lbl_minRango">
@@ -633,10 +644,7 @@
         </div>
       </div>
 
-      <!-- drp_maximo_pagEstadisticas (Droplist) -->
-      <div id="u101" class="ax_droplist" data-label="drp_maximo_pagEstadisticas">
-         <input id="u101_input" type="number" value="" name='edmax'/>
-      </div>
+      
 
       
       
@@ -667,7 +675,12 @@
 
       <!-- txt_rangoResult (Text Field) -->
       <div id="u107" class="ax_text_field txt_perfil" data-label="txt_rangoResult">
-        <input id="u107_input" type="text" value="" name='pprangoedad' readonly/>
+        <?php
+        if(isset($_SESSION['cant_rango'])){
+        echo $_SESSION['cant_rango'];}
+		else{
+		echo 'naadaaa';};
+		?>
       </div>
 
       <!-- txt_personaxpaisResult (Text Field) -->

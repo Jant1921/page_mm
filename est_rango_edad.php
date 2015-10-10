@@ -1,17 +1,24 @@
 <?php
+include('sesion.php');
 $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
-if (!$conn) {
-	$error = "No se pudo conectar con la base de datos";
-} else {
-        $min = $_POST['x'];
-        $max = $_POST['y'];
-	$scriptU='begin get_personas_rangoedad(:emin,emax);end;';//se puede hacer pegado, ver login
+        $min = $_POST['edmin'];
+        $max = $_POST['edmax'];
+		$scriptU='begin
+  :result := get_personas_rangoedad(min => :min,
+                                    max => :max);
+end;';//se puede hacer pegado, ver login
             $stid = oci_parse($conn,$scriptU);
-            oci_bind_by_name($stid,':emax',$max);
-            oci_bind_by_name($stid,':emin',$min);
-             oci_execute($stid); //es csomo F8 ejecutar//para ejecutar el script
-             echo "$stid";
-            }
+            oci_bind_by_name($stid,':result',$cantidad,3);
+            oci_bind_by_name($stid,':max',$max);
+            oci_bind_by_name($stid,':min',$min);
+            oci_execute($stid); //es csomo F8 ejecutar//para ejecutar el script
+             $_SESSION['cant_rango'] = 'jasodjsadisaod';
+             $_SESSION['cant_rango'] = $cantidad;
+             echo $cantidad;
+             echo 'sirve?';
+             echo $max;
+             echo $min;
+             header("location: estadisticas.html");
 	oci_close($conn);
       
 ?>

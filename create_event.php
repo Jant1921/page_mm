@@ -30,12 +30,12 @@
                   descrip => :descrip);
 					commit;
 				end;';
-			
+				$date = date('d-m-Y', strtotime($_POST['fecha_evento']));
 				$stid = oci_parse($conn,$script_insert);
 				oci_bind_by_name($stid,':nombre',$nombre_evento);
 				oci_bind_by_name($stid,':lugar',$ciudad_evento);
 				oci_bind_by_name($stid,':hora',$hora_evento);
-				oci_bind_by_name($stid,':fecha',$fecha_evento);
+				oci_bind_by_name($stid,':fecha',$date);
 				oci_bind_by_name($stid,':descrip',$descripcion_evento);
 				oci_execute($stid);
 				
