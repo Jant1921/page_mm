@@ -69,7 +69,7 @@ if (isset($_POST['btn_guarda_df'])) {   // si el boton es presionado que verifiq
         oci_execute($stid);
         
         $person_peso=$_POST['in_peso'];
-        $scriptU='begin updatePesoPersona((idPersona => :id_p,nPeso => :peso);commit;end;';
+        $scriptU='begin updatePesoPersona(idPersona => :id_p,nPeso => :peso);commit;end;';
         $stid = oci_parse($conn,$scriptU);
          oci_bind_by_name($stid,':peso',$person_peso);
          oci_bind_by_name($stid,':id_p',$id_pers);
