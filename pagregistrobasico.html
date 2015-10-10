@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include('sesion.php');
+include('registrobasico.php');
+?><!DOCTYPE html>
 <html>
   <head>
     <title>PagRegistroBasico</title>
@@ -68,7 +71,7 @@
           <p><span></span></p>
         </div>
       </div>
-
+	<form method="post" action="">
       <!-- Unnamed (Shape) -->
       <div id="u5" class="ax_paragraph">
         <img id="u5_img" class="img " src="resources/images/transparent.gif"/>
@@ -157,11 +160,7 @@
 
       <!-- btn_cargarImagen_pagRegistroBasico (Shape) -->
       <div id="u21" class="ax_shape" data-label="btn_cargarImagen_pagRegistroBasico">
-        <img id="u21_img" class="img " src="images/pagregistrobasico/btn_cargarimagen_pagregistrobasico_u21.png"/>
-        <!-- Unnamed () -->
-        <div id="u22" class="text">
-          <p><span>Cargar Imagen</span></p>
-        </div>
+        <input type="submit" id="u22" name="btn_guardar" value="Continuar">
       </div>
 
       <!-- btn_continuar_pagRegistroBasico (Shape) -->

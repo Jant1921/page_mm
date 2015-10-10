@@ -3,14 +3,7 @@ include('sesion.php');
 
 $error=''; // Variable To Store Error Message... el mensaje de error
 if (isset($_POST['btn_guarda_df'])) {   // si el boton es presionado que verifique si cada uno de esos campos son  diferente de vacios
-    if ( (empty($_POST['in_contextura']) || empty($_POST['in_cabello']) || empty($_POST['in_piel']) ||
-            empty($_POST['in_ojos']) || empty($_POST['in_frecejer']) ||
-             empty($_POST['in_fumador']) ||
-             empty($_POST['in_altura'])||empty($_POST['in_peso']))) {  // (in_nombre) nombre del campo en la interfaz
-    $error = "Ning�n campo puede quedar vac�o";  //si hay alguno vacio, tira error
-    echo $error;
-    }
-    else{
+    
         $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB'); //crea la conexion 
     if (!$conn) {
         $error = "No se pudo conectar con la base de datos";  //si no se pudo dar la conexion, error!
@@ -19,28 +12,28 @@ if (isset($_POST['btn_guarda_df'])) {   // si el boton es presionado que verifiq
         $Persona_id=$_SESSION['signed_id'];
         
         $person_contextura=$_POST['in_contextura'];
-        $scriptU='begin update_persona_contextura(person_id => :$id_p,contex_id => :cont_id);end;';
+        $scriptU='begin update_persona_contextura(person_id => :id_p,contex_id => :cont_id);end;';
         $stid = oci_parse($conn,$scriptU);
         oci_bind_by_name($stid,':id_p',$id_pers);
          oci_bind_by_name($stid,':cont_id',$person_contextura);
         oci_execute($stid);
         
         $person_cabello=$_POST['in_cabello'];
-        $scriptU='begin ACTUALIZAR_COLOR_PELO(NColor => :id_color,person_id => :$id_p);end;';
+        $scriptU='begin ACTUALIZAR_COLOR_PELO(:id_color,:id_p);end;';
         $stid = oci_parse($conn,$scriptU);
         oci_bind_by_name($stid,':id_color',$person_cabello);
         oci_bind_by_name($stid,':id_p',$id_pers);
         oci_execute($stid);
         
         $person_piel=$_POST['in_piel'];
-        $scriptU='begin Actualizar_Color_PIEL(NColor => :id_color,person_id => :$id_p);end;';
+        $scriptU='begin Actualizar_Color_PIEL(:id_color,:id_p);end;';
         $stid = oci_parse($conn,$scriptU);
         oci_bind_by_name($stid,':id_color',$person_piel);
         oci_bind_by_name($stid,':id_p',$id_pers);
         oci_execute($stid);
         
         $person_ojos=$_POST['in_ojos'];
-        $scriptU='begin Actualizar_Color_Ojos(NColor => :id_color,person_id => :$id_p);end;';
+        $scriptU='begin Actualizar_Color_Ojos(:id_color,:id_p);end;';
         $stid = oci_parse($conn,$scriptU);
         oci_bind_by_name($stid,':id_color',$person_ojos);
         oci_bind_by_name($stid,':id_p',$id_pers);
@@ -76,7 +69,7 @@ if (isset($_POST['btn_guarda_df'])) {   // si el boton es presionado que verifiq
         oci_execute($stid);
         
         $person_peso=$_POST['in_peso'];
-        $scriptU='begin updatePesoPersona((idPersona => :id_p,nPeso => :peso);end;';
+        $scriptU='begin updatePesoPersona((idPersona => :id_p,nPeso => :peso);commit;end;';
         $stid = oci_parse($conn,$scriptU);
          oci_bind_by_name($stid,':peso',$person_peso);
          oci_bind_by_name($stid,':id_p',$id_pers);
@@ -86,5 +79,4 @@ if (isset($_POST['btn_guarda_df'])) {   // si el boton es presionado que verifiq
     
     }
     }
-}
 ?>
