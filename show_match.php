@@ -20,6 +20,16 @@ function show_datos($id){
 	return $resul;
 }
 
+function show_foto($id){
+	$conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
+	$stid = oci_parse($conn, "begin :result := get_foto(person_id => :codigo); end;");
+	oci_bind_by_name($stid,":result",$resul,200);
+	oci_bind_by_name($stid,":codigo",$id);
+	oci_execute($stid);
+	oci_close($conn);
+	return $resul;
+}
+
 $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
 if (isset($_POST['btn_anterior'])){
 	$person_suger=$_SESSION['personas'];

@@ -15,6 +15,7 @@ if ($_FILES['imagen']['error']) {
                    echo "El archivo que ha enviado tiene un tamaño nulo !";
                    break;
           }
+          header("location: pagregistrobasico.html");
 }
 else {
  // $_FILES['imagen']['error'] vale 0 es decir UPLOAD_ERR_OK

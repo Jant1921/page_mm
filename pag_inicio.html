@@ -89,6 +89,7 @@ include('show_match.php');
 		if($cantidad>= $posicion +1){
 		$nombre1=show_nombre($person_suger[$posicion]);
 		$datos1=show_datos($person_suger[$posicion]);
+		$foto1=show_foto($person_suger[$posicion]);
 		echo '<div id="u0" class="ax_shape">
         <img id="u0_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -98,7 +99,7 @@ include('show_match.php');
       </div>
       <!-- img_persona1 (Image) -->
       <div id="u9" class="ax_image" data-label="img_persona1">
-        <img id="u9_img" class="img " src="fotos/bg.jpg"/>
+        <img id="ffoto1" class="img " src="'.$foto1.'"style="max-width: 140px; max-height: 135px"/>
         <!-- Unnamed () -->
         <div id="u10" class="text">
           <p><span></span></p>
@@ -691,6 +692,7 @@ include('show_match.php');
       if($cantidad>= ($posicion +2)){
       $nombre2=show_nombre($person_suger[$posicion+1]);
 	  $datos2=show_datos($person_suger[$posicion+1]);
+	  $foto2=show_foto($person_suger[$posicion+1]);
 	  echo '<div id="u112" class="ax_shape">
         <img id="u112_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -701,7 +703,7 @@ include('show_match.php');
 
       <!-- img_persona4 (Image) -->
       <div id="u114" class="ax_image" data-label="img_persona4">
-        <img id="u114_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <img id="ffoto2" class="img " src="'.$foto2.'"style="max-width: 140px; max-height: 135px"/>
         <!-- Unnamed () -->
         <div id="u115" class="text">
           <p><span></span></p>
@@ -740,6 +742,7 @@ include('show_match.php');
       if($cantidad>=($posicion+3)){
       $nombre3=show_nombre($person_suger[$posicion+2]);
 	  $datos3=show_datos($person_suger[$posicion+2]);
+	  $foto3=show_foto($person_suger[$posicion+2]);
 	  echo '<div id="u121" class="ax_shape">
         <img id="u121_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -750,7 +753,7 @@ include('show_match.php');
 
       <!-- img_persona2 (Image) -->
       <div id="u123" class="ax_image" data-label="img_persona2">
-        <--><img id="u123_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <img id="ffoto3" class="img " src="'.$foto3.'" style="max-width: 140px; max-height: 135px"/>
         <!-- Unnamed () -->
         <div id="u124" class="text">
           <p><span></span></p>
@@ -790,6 +793,7 @@ include('show_match.php');
       if($cantidad>=($posicion+4)){
       $nombre4=show_nombre($person_suger[$posicion+3]);
 	  $datos4=show_datos($person_suger[$posicion+3]);
+	  $foto4=show_foto($person_suger[$posicion+3]);
 	  echo '<div id="u130" class="ax_shape">
         <img id="u130_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -800,7 +804,7 @@ include('show_match.php');
 
       <!-- img_persona5 (Image) -->
       <div id="u132" class="ax_image" data-label="img_persona5">
-        <img id="u132_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <img id="ffoto4" class="img " src="'.$foto4.'" style="max-width: 140px; max-height: 135px"/>
         <!-- Unnamed () -->
         <div id="u133" class="text">
           <p><span></span></p>
@@ -840,6 +844,7 @@ include('show_match.php');
       if($cantidad>=($posicion+5)){
       $nombre5=show_nombre($person_suger[$posicion+4]);
 	  $datos5=show_datos($person_suger[$posicion+4]);
+	  $foto5=show_foto($person_suger[$posicion+4]);
 		echo '<div id="u139" class="ax_shape">
         <img id="u139_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -850,7 +855,7 @@ include('show_match.php');
 
       <!-- img_persona3 (Image) -->
       <div id="u141" class="ax_image" data-label="img_persona3">
-        <img id="u141_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <img id="ffoto5" class="img " src="'.$foto5.'" style="max-width: 140px; max-height: 135px"/>
         <!-- Unnamed () -->
         <div id="u142" class="text">
           <p><span></span></p>
@@ -890,6 +895,7 @@ include('show_match.php');
       if($cantidad>=($posicion+6)){
       $nombre6=show_nombre($person_suger[$posicion+5]);
 	  $datos6=show_datos($person_suger[$posicion+5]);
+	  $foto6=show_foto($person_suger[$posicion+5]);
 	  echo '<div id="u148" class="ax_shape">
         <img id="u148_img" class="img " src="images/pag_match/u119.png"/>
         <!-- Unnamed () -->
@@ -900,7 +906,7 @@ include('show_match.php');
 
       <!-- img_persona6 (Image) -->
       <div id="u150" class="ax_image" data-label="img_persona6">
-        <img id="u150_img" class="img " src="images/pag_match/img_persona1_u121.png"/>
+        <img id="u150_img" class="img " src="'.$foto6.'" style="max-width: 140px; max-height: 135px"/>
         <!-- Unnamed () -->
         <div id="u151" class="text">
           <p><span></span></p>
