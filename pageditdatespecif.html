@@ -1,3 +1,6 @@
+﻿<?php
+include('edit_pag_dat_especif.php');
+?>﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -587,7 +590,8 @@
           <p><span></span></p>
         </div>
       </div>
-
+ <form method="post" action="">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+      
       <!-- Unnamed (Shape) -->
       <div id="u95" class="ax_paragraph">
         <img id="u95_img" class="img " src="resources/images/transparent.gif"/>
@@ -626,23 +630,23 @@
 
       <!-- drp_mascotaFuturo (Droplist) -->
       <div id="u103" class="ax_droplist" data-label="drp_mascotaFuturo">
-        <select id="u103_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+        <select id="u103_input" name="in_fmascotas">
+          <option value='1'>Si</option>
+          <option value='0'>No</option>
         </select>
       </div>
 
       <!-- drp_poseeMascota (Droplist) -->
       <div id="u104" class="ax_droplist" data-label="drp_poseeMascota">
-        <select id="u104_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+        <select id="u104_input" name="in_pmascotas">
+          <option value='1'>Si</option>
+          <option value='0'>No</option>
         </select>
       </div>
 
       <!-- drp_rango_salario (Droplist) -->
       <div id="u105" class="ax_droplist" data-label="drp_rango_salario">
-        <select id="u105_input">
+        <select id="u105_input" name="rangosal_reg">
           <?php include('catalogo_rsalario.php');
           	?>
         </select>
@@ -650,15 +654,15 @@
 
       <!-- drp_hijos_futuro (Droplist) -->
       <div id="u106" class="ax_droplist" data-label="drp_hijos_futuro">
-        <select id="u106_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+        <select id="u106_input" name="in_fhijos">
+          <option value='1'>Si</option>
+          <option value='0'>No</option>
         </select>
       </div>
 
       <!-- drp_cantidad_hijos (Droplist) -->
       <div id="u107" class="ax_droplist" data-label="drp_cantidad_hijos">
-        <input id="u107_input" type="number" value=""/>
+        <input id="u107_input" type="number" name="in_chijos" value=""/>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -699,15 +703,15 @@
 
       <!-- drp_gustaMascota (Droplist) -->
       <div id="u116" class="ax_droplist" data-label="drp_gustaMascota">
-        <select id="u116_input">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
+        <select id="u116_input" name="in_gmascotas">
+          <option value='1'>Si</option>
+          <option value='0'>No</option>
         </select>
       </div>
 
       <!-- drp_signoZodiaco (Droplist) -->
       <div id="u117" class="ax_droplist" data-label="drp_signoZodiaco">
-        <select id="u117_input">
+        <select id="u117_input" name="in_szodiaco">
           <?php include('catalogo_sig_zodiaco.php');
           	?>
         </select>
@@ -715,11 +719,8 @@
 
       <!-- btn_guardar (Shape) -->
       <div id="u118" class="ax_shape" data-label="btn_guardar">
-        <img id="u118_img" class="img " src="images/pageditdatespecif/btn_guardar_u118.png"/>
-        <!-- Unnamed () -->
-        <div id="u119" class="text">
-          <p><span>Guardar Cambios</span></p>
-        </div>
+         <input type="submit" id="u119" name="btn_guarda_ede" value="Finalizar">
+    
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -909,7 +910,7 @@
 
       <!-- txb_input_slogan (Text Area) -->
       <div id="u154" class="ax_text_area" data-label="txb_input_slogan">
-        <textarea id="u154_input"></textarea>
+        <textarea id="u154_input"  name="in_about"></textarea>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -920,15 +921,16 @@
           <p><span>Cuentales a todos sobre ti</span></p>
         </div>
       </div>
-
+</form>
+      
+ <form  action="pag_inicio.html">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+      
       <!-- btn_cancelar (Shape) -->
       <div id="u157" class="ax_shape" data-label="btn_cancelar">
-        <img id="u157_img" class="img " src="images/pageditdatespecif/btn_guardar_u118.png"/>
-        <!-- Unnamed () -->
-        <div id="u158" class="text">
-          <p><span>Cancelar</span></p>
-        </div>
+         <input type="submit" id="u158" name="btn_cancela" value="Cancelar">
+    
       </div>
+ </form>
     </div>
   </body>
 </html>
