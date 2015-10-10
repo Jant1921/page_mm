@@ -1,3 +1,6 @@
+﻿<?php
+include('edit_pag_dat_fisic.php');
+?>﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -68,7 +71,8 @@
           <p><span></span></p>
         </div>
       </div>
-
+      <form method="post" action="">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+  
       <!-- Unnamed (Shape) -->
       <div id="u5" class="ax_paragraph">
         <img id="u5_img" class="img " src="resources/images/transparent.gif"/>
@@ -116,7 +120,7 @@
 
       <!-- drp_frecEjercicio_pagEditDatosFisicos (Droplist) -->
       <div id="u15" class="ax_droplist" data-label="drp_frecEjercicio_pagEditDatosFisicos">
-        <select id="u15_input">
+        <select id="u15_input" name="in_frecejer">
           <?php include('catalogo_frec_ejercicio.php');
            ?>
         </select>
@@ -124,7 +128,7 @@
 
       <!-- drp_contextura_pagEditDatosFisicos (Droplist) -->
       <div id="u16" class="ax_droplist" data-label="drp_contextura_pagEditDatosFisicos">
-        <select id="u16_input">
+        <select id="u16_input" name="in_contextura">
           <?php include('catalogo_contextura.php');
            ?>
         </select>
@@ -132,7 +136,7 @@
 
       <!-- drp_colorCabello_pagEditDatosFisicos (Droplist) -->
       <div id="u17" class="ax_droplist" data-label="drp_colorCabello_pagEditDatosFisicos">
-        <select id="u17_input">
+        <select id="u17_input" name="in_cabello">
           <?php include('catalogo_colorCabello.php');
            ?>
         </select>
@@ -140,7 +144,7 @@
 
       <!-- drp_colorOjos_pagEditDatosFisicos (Droplist) -->
       <div id="u18" class="ax_droplist" data-label="drp_colorOjos_pagEditDatosFisicos">
-        <select id="u18_input">
+        <select id="u18_input" name="in_ojos">
           <?php include('catalogo_colorOjos.php');
            ?>
         </select>
@@ -148,7 +152,7 @@
 
       <!-- drp_colorPiel_pagEditDatosFisicos (Droplist) -->
       <div id="u19" class="ax_droplist" data-label="drp_colorPiel_pagEditDatosFisicos">
-        <select id="u19_input">
+        <select id="u19_input"  name="in_piel">
           <?php include('catalogo_colorPiel.php');
            ?>
         </select>
@@ -192,7 +196,7 @@
 
       <!-- drp_bebes_pagEditDatosFisicos (Droplist) -->
       <div id="u28" class="ax_droplist" data-label="drp_bebes_pagEditDatosFisicos">
-        <select id="u28_input">
+        <select id="u28_input" name="in_bebedor">
           <?php include('catalogo_bebedor.php');
            ?>
         </select>
@@ -200,7 +204,7 @@
 
       <!-- drp_fumas_pagEditDatosFisicos (Droplist) -->
       <div id="u29" class="ax_droplist" data-label="drp_fumas_pagEditDatosFisicos">
-        <select id="u29_input">
+        <select id="u29_input" name="in_fumador">
           <option value="1">Si</option>
           <option value="0">No</option>
         </select>
@@ -208,21 +212,18 @@
 
       <!-- txt_altura_pagEditDatosFisicos (Text Field) -->
       <div id="u30" class="ax_text_field" data-label="txt_altura_pagEditDatosFisicos">
-        <input id="u30_input" type="number" value=""/>
+        <input id="u30_input" type="number" name="in_altura" value=""/>
       </div>
 
       <!-- txt_peso_pagEditDatosFisicos (Text Field) -->
       <div id="u31" class="ax_text_field" data-label="txt_peso_pagEditDatosFisicos">
-        <input id="u31_input" type="number" value=""/>
+        <input id="u31_input" type="number" name="in_peso"  value=""/>
       </div>
 
       <!-- btn_guardarCambios_pagEditDatosFisicos (Shape) -->
       <div id="u32" class="ax_shape" data-label="btn_guardarCambios_pagEditDatosFisicos">
-        <img id="u32_img" class="img " src="images/pag_registro/btn_crear_pagregistro_u6.png"/>
-        <!-- Unnamed () -->
-        <div id="u33" class="text">
-          <p><span>Guardar Cambios</span></p>
-        </div>
+         <input type="submit" id="u33" name="btn_guarda_dfe" value="Guardar">
+     
       </div>
 
       <!-- Unnamed (Menus) -->
@@ -743,15 +744,15 @@
           </div>
         </div>
       </div>
-
+      </form>
+       <form  action="pag_inicio.html">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+  
       <!-- btn_cancelar_pagEditDatosFisicos (Shape) -->
       <div id="u124" class="ax_shape" data-label="btn_cancelar_pagEditDatosFisicos">
-        <img id="u124_img" class="img " src="images/pageditpersbuscada/btn_cancelar_pageditpersbuscada_u119.png"/>
-        <!-- Unnamed () -->
-        <div id="u125" class="text">
-          <p><span>Cancelar</span></p>
-        </div>
+         <input type="submit" id="u125" name="btn_cancela" value="Cancelar">
+    
       </div>
+      </form>
     </div>
   </body>
 </html>
