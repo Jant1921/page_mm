@@ -1,3 +1,6 @@
+﻿<?php
+include('reg_pag_dat_especif.php');
+?>﻿
 ﻿<!DOCTYPE html>
 <html>
   <head>
@@ -68,7 +71,8 @@
           <p><span></span></p>
         </div>
       </div>
-
+ <form method="post" action="">  <!-- Post Manda por bajo los datos...en action va a la pagina que quiero ir, si esta vacio, redirecciona a la misma pagina  -->
+      
       <!-- Unnamed (Shape) -->
       <div id="u5" class="ax_paragraph">
         <img id="u5_img" class="img " src="resources/images/transparent.gif"/>
@@ -115,7 +119,7 @@
 
       <!-- drp_hijos_futur (Droplist) -->
       <div id="u14" class="ax_droplist" data-label="drp_hijos_futur">
-        <select id="u14_input">
+        <select id="u14_input" name="in_fhijos">
           <option value="1">Si</option>
           <option value="0">No</option>
         </select>
@@ -123,7 +127,7 @@
 
       <!-- drp_cantidad_hijos (Droplist) -->
       <div id="u15" class="ax_droplist" data-label="drp_cantidad_hijos">
-        <input id="u15_input" type="number" value=""/>
+        <input id="u15_input" type="number" name="in_chijos" value=""/>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -164,11 +168,7 @@
 
       <!-- btn_finalizar (Shape) -->
       <div id="u24" class="ax_shape" data-label="btn_finalizar">
-        <img id="u24_img" class="img " src="images/pagregdatfisicos/btn_continuar_pagregdatfisicos_u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u25" class="text">
-          <p><span>Finalizar</span></p>
-        </div>
+         <input type="submit" id="u25" name="btn_guarda_de" value="Finalizar">
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -182,7 +182,7 @@
 
       <!-- txb_input_slogan (Text Area) -->
       <div id="u28" class="ax_text_area" data-label="txb_input_slogan">
-        <textarea id="u28_input"></textarea>
+        <textarea id="u28_input" name="in_about"></textarea>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -196,7 +196,7 @@
 
       <!-- drp_mascotaFuturo (Droplist) -->
       <div id="u31" class="ax_droplist" data-label="drp_mascotaFuturo">
-        <select id="u31_input">
+        <select id="u31_input" name="in_fmascotas">
           <option value="1">Si</option>
           <option value="0">No</option>
         </select>
@@ -204,7 +204,7 @@
 
       <!-- drp_poseeMascota (Droplist) -->
       <div id="u32" class="ax_droplist" data-label="drp_poseeMascota">
-        <select id="u32_input">
+        <select id="u32_input" name="in_pmascotas">
           <option value="1">Si</option>
           <option value="0">No</option>
         </select>
@@ -212,7 +212,7 @@
 
       <!-- drp_gustaMascota (Droplist) -->
       <div id="u33" class="ax_droplist" data-label="drp_gustaMascota">
-        <select id="u33_input">
+        <select id="u33_input" name="in_gmascotas">
           <option value="1">Si</option>
           <option value="0">No</option>
         </select>
@@ -220,7 +220,7 @@
 
       <!-- drp_signoZodiaco (Droplist) -->
       <div id="u34" class="ax_droplist" data-label="drp_signoZodiaco">
-        <select id="u34_input">
+        <select id="u34_input" name="in_szodiaco">
           <?php include('catalogo_sig_zodiaco.php');
           	?>
         </select>
@@ -401,6 +401,7 @@
         </label>
         <input id="u65_input" type="checkbox" value="checkbox"/>
       </div>
+     </form>
     </div>
   </body>
 </html>
