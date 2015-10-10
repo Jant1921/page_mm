@@ -60,7 +60,7 @@ if (isset($_POST['btn_guarda_de'])) {   // si el boton es presionado que verifiq
          oci_bind_by_name($stid,':gmasc',$person_gmasc);
          oci_bind_by_name($stid,':id_p',$id_pers);
         oci_execute($stid);
-
+		
         header("location: perfil.html");
     
     }

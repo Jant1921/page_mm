@@ -55,25 +55,25 @@ if (isset($_POST['boton_crear'])) {
         //se carga el nombre completo de la persona
         $stid = oci_parse($conn, 'begin :resultado := get_person_nombre(:id_persona);end;');
         oci_bind_by_name($stid,':resultado',$person_nombre,30);
-        oci_bind_by_name($stid,':id_persona',$person_id);
+        oci_bind_by_name($stid,':id_persona',$persona_id);
         oci_execute($stid);
         
         $stid = oci_parse($conn, 'begin :resultado := select_prim_apellido(:id_persona);end;');
         oci_bind_by_name($stid,':resultado',$person_pApellido,30);
-        oci_bind_by_name($stid,':id_persona',$person_id);
+        oci_bind_by_name($stid,':id_persona',$persona_id);
         oci_execute($stid);
         
         $person_nombre.=" ".$person_pApellido;
         
         $stid = oci_parse($conn, 'begin :resultado := select_seg_apellido(:id_persona);end;');
         oci_bind_by_name($stid,':resultado',$person_sApellido,30);
-        oci_bind_by_name($stid,':id_persona',$person_id);
+        oci_bind_by_name($stid,':id_persona',$persona_id);
         oci_execute($stid);
         
         $script_correo='begin insert_correo(:direccion,:usuario); end;';
         $stid = oci_parse($conn,$script_correo);
         oci_bind_by_name($stid,':direccion',$_POST['in_correo']);
-        oci_bind_by_name($stid,':usuario',$person_id);
+        oci_bind_by_name($stid,':usuario',$persona_id);
         oci_execute($stid);
         
         $person_nombre.=" ".$person_sApellido;
@@ -83,8 +83,7 @@ if (isset($_POST['boton_crear'])) {
         $_SESSION['signed_sApellido']=$person_sApellido;
         $_SESSION['signed_correo']=$_POST['in_correo'];
         
-        echo $person_id;
-        echo $date;
+        
         
         //header("location: pagpersonabuscada.html");
     
