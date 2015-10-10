@@ -33,6 +33,7 @@ else {
     oci_bind_by_name($stid,':usuario',$id_pers);  //id de la persona
     oci_bind_by_name($stid,':ruta',$ruta);
     oci_execute($stid);
+    $_SESSION['foto_user']=$ruta;
     header("location: pagregistrobasico.html");
 } 
 ?>

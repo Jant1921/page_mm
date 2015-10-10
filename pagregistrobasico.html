@@ -1,7 +1,7 @@
 ﻿<?php
 include('sesion.php');
-include('registrobasico.php');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>PagRegistroBasico</title>
@@ -71,7 +71,7 @@ include('registrobasico.php');
           <p><span></span></p>
         </div>
       </div>
-	<form method="post" action="">
+	<form method="post" action="registrobasico.php">
       <!-- Unnamed (Shape) -->
       <div id="u5" class="ax_paragraph">
         <img id="u5_img" class="img " src="resources/images/transparent.gif"/>
@@ -110,7 +110,7 @@ include('registrobasico.php');
 
       <!-- drp_religion_pagRegistroBasico (Droplist) -->
       <div id="u13" class="ax_droplist" data-label="drp_religion_pagRegistroBasico">
-        <select id="u13_input">
+        <select id="u13_input" name="in_reli">
           <?php include('catalogo_religion.php');
           	?>
         </select>
@@ -118,7 +118,7 @@ include('registrobasico.php');
 
       <!-- drp_ocupacion_pagRegistroBasico (Droplist) -->
       <div id="u14" class="ax_droplist" data-label="drp_ocupacion_pagRegistroBasico">
-        <select id="u14_input">
+        <select id="u14_input" name="in_ocup">
           <?php include('catalogo_ocupacion.php');
           	?>
         </select>
@@ -126,7 +126,7 @@ include('registrobasico.php');
 
       <!-- drp_nivelEducacion_pagRegistroBasico (Droplist) -->
       <div id="u15" class="ax_droplist" data-label="drp_nivelEducacion_pagRegistroBasico">
-        <select id="u15_input">
+        <select id="u15_input" name="in_edu">
           <?php include('catalogo_educacion.php');
           	?>
         </select>
@@ -134,7 +134,7 @@ include('registrobasico.php');
 
       <!-- drp_estadoCivil_pagRegistroBasico (Droplist) -->
       <div id="u16" class="ax_droplist" data-label="drp_estadoCivil_pagRegistroBasico">
-        <select id="u16_input">
+        <select id="u16_input" name="in_civil">
          <?php include('catalogo_ecivil.php');
           	?>
         </select>
@@ -151,26 +151,29 @@ include('registrobasico.php');
 
       <!-- Unnamed (Image) -->
       <div id="u19" class="ax_image">
-        <img id="u19_img" class="img " src="images/pagregistrobasico/u19.png"/>
+        <?php
+        if(isset($_SESSION['foto_user'])){
+        echo '<img id="ffoto" class="img " src="'.$_SESSION['foto_user'].'"style="max-width: 300px; max-height: 300px"/>';}
+		?>
         <!-- Unnamed () -->
         <div id="u20" class="text">
           <p><span></span></p>
         </div>
       </div>
-
-      <!-- btn_cargarImagen_pagRegistroBasico (Shape) -->
-      <div id="u21" class="ax_shape" data-label="btn_cargarImagen_pagRegistroBasico">
-        <input type="submit" id="u22" name="btn_guardar" value="Continuar">
-      </div>
-
-      <!-- btn_continuar_pagRegistroBasico (Shape) -->
+<!-- btn_continuar_pagRegistroBasico (Shape) -->
       <div id="u23" class="ax_shape" data-label="btn_continuar_pagRegistroBasico">
-        <img id="u23_img" class="img " src="images/pagregistrobasico/btn_continuar_pagregistrobasico_u23.png"/>
-        <!-- Unnamed () -->
-        <div id="u24" class="text">
-          <p><span>Continuar</span></p>
-        </div>
+        <input type="submit" id="u24" name="btn_guardar" value="Guardar Cambios">
       </div>
+      </form>
+      <!-- btn_cargarImagen_pagRegistroBasico (Shape) -->
+      <FORM method="POST" action="load_foto.php" ENCTYPE="multipart/form-data">
+        <div id="u21">
+          <INPUT type=file name="imagen">
+          <INPUT type=submit value="Cargar Imagen">
+      </div>
+      </FORM>
+
+      
     </div>
   </body>
 </html>
