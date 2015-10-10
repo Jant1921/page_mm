@@ -13,6 +13,7 @@ if (isset($_POST['boton_crear'])) {
         $conn = oci_connect('mmAdmin','mmAdmin', '//localhost/MATCHMEDB');
     if (!$conn) {
         $error = "No se pudo conectar con la base de datos";
+        echo $error;
     } else {
         
         $scriptU='begin crear_usuario(nombre => :nombre,pass => :pass);end;';
@@ -38,7 +39,8 @@ if (isset($_POST['boton_crear'])) {
         oci_bind_by_name($stid,':nombre',$_POST['in_nombre']);
         oci_bind_by_name($stid,':prim_apellido',$_POST['in_papellido']);
         oci_bind_by_name($stid,':seg_apellido',$_POST['in_sapellido']);
-        oci_bind_by_name($stid,':fecha',$_POST['in_nacimiento']);
+        $date = date('d-m-Y', strtotime($_POST['in_nacimiento']));
+        oci_bind_by_name($stid,':fecha',$date);
         oci_bind_by_name($stid,':usuario',$_POST['in_usuario']);
         oci_bind_by_name($stid,':genero',$_POST['in_genero']);
         oci_bind_by_name($stid,':residencia',$_POST['in_ciudad']);
@@ -68,15 +70,23 @@ if (isset($_POST['boton_crear'])) {
         oci_bind_by_name($stid,':id_persona',$person_id);
         oci_execute($stid);
         
+        $script_correo='begin insert_correo(:direccion,:usuario); end;';
+        $stid = oci_parse($conn,$script_correo);
+        oci_bind_by_name($stid,':direccion',$_POST['in_correo']);
+        oci_bind_by_name($stid,':usuario',$person_id);
+        oci_execute($stid);
+        
         $person_nombre.=" ".$person_sApellido;
         
         $_SESSION['signed_nombre']=$person_nombre;
         $_SESSION['signed_pApellido']=$person_pApellido;
         $_SESSION['signed_sApellido']=$person_sApellido;
-        $_SESSION['signed_correo']=$person_correo;
+        $_SESSION['signed_correo']=$_POST['in_correo'];
         
+        echo $person_id;
+        echo $date;
         
-        header("location: pagpersonabuscada.html");
+        //header("location: pagpersonabuscada.html");
     
     }
     }
