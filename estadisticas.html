@@ -47,6 +47,21 @@
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+       <script type="text/javascript">
+           
+        $(document).ready(function(){
+
+        $('#u98').click(function(){
+		var emin=$('#u94_input').val(),
+                var emax=$('#u101_input').val();
+        $('#u107_input').load('est_rango_edad.php',{x:emin,y:emax} );
+
+       });    
+        
+       });
+        
+</script>
   </head>
   <body>
     <div id="base" class="">
@@ -574,6 +589,12 @@
           <p><span>Cantidad de Personas Registradas en el Sistema:</span></p>
         </div>
       </div>
+      
+      
+      
+      
+      
+      
 
       <!-- lbl_rangos (Shape) -->
       <div id="u92" class="ax_paragraph lbl_perfil" data-label="lbl_rangos">
@@ -585,28 +606,8 @@
       </div>
 
       <!-- drp_minimo_pagEstadisticas (Droplist) -->
-      <div id="u94" class="ax_droplist" data-label="drp_minimo_pagEstadisticas">
-        <select id="u94_input">
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="...">...</option>
-          <option value="30">30</option>
-          <option value="...">...</option>
-          <option value="35">35</option>
-          <option value="...">...</option>
-          <option value="40">40</option>
-          <option value="...">...</option>
-          <option value="45">45</option>
-          <option value="...">...</option>
-          <option value="50">50</option>
-          <option value="...">...</option>
-        </select>
+      <div id="u94" class="ax_text_field" data-label="drp_minimo_pagEstadisticas">
+         <input id="u94_input" type="number" value="" name='edmin'/>
       </div>
 
       <!-- lbl_minRango (Shape) -->
@@ -620,11 +621,7 @@
 
       <!-- btn_ActualizaRangoEdad_pagEstadisticas (Shape) -->
       <div id="u97" class="ax_shape" data-label="btn_ActualizaRangoEdad_pagEstadisticas">
-        <img id="u97_img" class="img " src="images/pagdeportesxpersona/btn_actualizarwinks_u158.png"/>
-        <!-- Unnamed () -->
-        <div id="u98" class="text">
-          <p><span>Actualizar</span></p>
-        </div>
+       <input type="submit" id="u98" name="btn_act_redad" value="Actualizar ">
       </div>
 
       <!-- lbl_minRango (Shape) -->
@@ -638,29 +635,13 @@
 
       <!-- drp_maximo_pagEstadisticas (Droplist) -->
       <div id="u101" class="ax_droplist" data-label="drp_maximo_pagEstadisticas">
-        <select id="u101_input">
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="...">...</option>
-          <option value="30">30</option>
-          <option value="...">...</option>
-          <option value="35">35</option>
-          <option value="...">...</option>
-          <option value="40">40</option>
-          <option value="...">...</option>
-          <option value="45">45</option>
-          <option value="...">...</option>
-          <option value="50">50</option>
-          <option value="...">...</option>
-        </select>
+         <input id="u101_input" type="number" value="" name='edmax'/>
       </div>
 
+      
+      
+      
+      
       <!-- lbl_personxPais (Shape) -->
       <div id="u102" class="ax_paragraph lbl_perfil" data-label="lbl_personxPais">
         <img id="u102_img" class="img " src="resources/images/transparent.gif"/>
@@ -681,12 +662,12 @@
 
       <!-- txt_registradas (Text Field) -->
       <div id="u106" class="ax_text_field txt_perfil" data-label="txt_registradas">
-        <input id="u106_input" type="text" value="40" readonly/>
+        <input id="u106_input" type="text" value="" readonly/>
       </div>
 
       <!-- txt_rangoResult (Text Field) -->
       <div id="u107" class="ax_text_field txt_perfil" data-label="txt_rangoResult">
-        <input id="u107_input" type="text" value="10" readonly/>
+        <input id="u107_input" type="text" value="" name='pprangoedad' readonly/>
       </div>
 
       <!-- txt_personaxpaisResult (Text Field) -->
